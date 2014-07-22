@@ -1,0 +1,1411 @@
+<!--                                  
+_ __ _____      ___ __ ____        
+| '__/ _ \ \ /\ / / '__|_  /        
+| | | (_) \ V  V /| |   / /        
+|_|  \___/ \_/\_/ |_|  /___|        
+| | | |                            
+| |_| |__   ___ _ __ ___   ___  ___
+| __| '_ \ / _ \ '_ ` _ \ / _ \/ __|
+| |_| | | |  __/ | | | | |  __/\__ \
+\__|_| |_|\___|_| |_| |_|\___||___/
+                          
+ashen theme v1.9                                    
+designed & manufactured by alex: http://rowrz.com/
+help with ideas by shantel: http://discountable.tk/
+http://rowrz.tumblr.com/themes
+-->
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+{block:Description}
+            <meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<link rel="shortcut icon" href="{Favicon}">
+<meta name="color:Background" content="#f6f6f6"/>
+<meta name="color:Text" content="#000000"/>
+<meta name="color:Hover" content="#FFFFFF"/>
+<meta name="color:Link" content="#000000"/>
+<meta name="color:accents" content="#f6f6f6"/>
+<meta name="color:entrybg" content="#FFFFFF"/>
+<meta name="color:entryborbg" content="#FFFFFF"/>
+<meta name="color:tooltips" content="#000000"/>
+{block:ifcustomcolorscheme}
+<meta name="color:nav1" content="#000000" />
+<meta name="color:nav2" content="#666666"/>
+<meta name="color:nav3" content="#999999"/>
+<meta name="color:nav4" content="#aaaaaa"/>
+<meta name="color:nav5" content="#dddddd"/>
+<meta name="color:nav6" content="#f1f1f1"/>
+{/block:ifcustomcolorscheme}
+<meta name="image:sidebarpic" content="{block:ShowAvatar}{PortraitURL-128}{/block:ShowAvatar}{block:HideAvatar}0{/block:HideAvatar}">
+
+<meta name="if:colorscheme" content="1"/>
+<meta name="if:customcolorscheme" content="1"/>
+<meta name="if:greycolorscheme" content="0"/>
+<meta name="if:pinkcolorscheme" content="0"/>
+<meta name="if:greencolorscheme" content="0"/>
+<meta name="if:bluecolorscheme" content="0"/>
+<meta name="if:entryborbgcolorscheme" content="0"/>
+<meta name="if:updatebox" content="0"/>
+<meta name="if:socialnetworks" content="1"/>
+<meta name="if:whitetumblrcontrols" content="0"/>
+<meta name="if:hovertooltips" content="1"/>
+<meta name="if:HoverPerma" content="0"/>
+<meta name="if:ShowCaptions" content="0"/>
+<meta name="if:2columns" content="1"/>
+<meta name="if:fadedimages" content="1"/>
+<meta name="if:TextLinks" content="1"/>
+
+<meta name="text:tab 1 title" content="stats"/>
+<meta name="text:tab 1" content="put stuff in here like your fhs follower counter or page views!; html can be pasted in here"/>
+<meta name="text:tab 2 title" content="social"/>
+<meta name="text:tab 2" content="the socialnetworks switch must be disabled for this to show; html can be pasted in here" />
+<meta name="text:tab 3 title" content="networks"/>
+<meta name="text:tab 3" content="put network badges in here or alike things; html can be pasted in here"/>
+<meta name="text:fb username" content=""/>
+<meta name="text:twitter username" content=""/>
+<meta name="text:ig username" content=""/>
+<meta name="text:kik username" content=""/>
+<meta name="text:snap chat username" content=""/>
+
+<meta name="text:desc font size" content="12px"/>
+<meta name="text:Body Font Size" content="10px"/>
+<meta name="text:img opacity" content=".8"/>
+
+<meta name="text:home link title" content="return"/>
+<meta name="text:msg link title" content="message"/>
+
+<meta name="text:link 1 title" content=""/>
+<meta name="text:link 1" content=""/>
+
+
+<meta name="text:link 2 title" content=""/>
+<meta name="text:link 2" content=""/>
+
+
+<meta name="text:link 3 title" content=""/>
+<meta name="text:link 3" content=""/>
+
+
+
+<script src="http://static.tumblr.com/ojd74qh/LCQn7c8wv/g.jquery.1.11.0.min.ashen.js"></script>
+
+<link href="http://static.tumblr.com/ojd74qh/nF6n4lotj/style-my-tooltips.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="http://static.tumblr.com/ojd74qh/2nFn4lotg/jquery.style-my-tooltips.js"></script>
+
+{block:ifhovertooltips}
+<script>
+    (function($){
+        $(document).ready(function(){
+            $("[title]").style_my_tooltips({ 
+                tip_follows_cursor:true,
+                tip_delay_time:400,
+                tip_fade_speed:300,
+                attribute:"title"
+            });
+        });
+    })(jQuery);
+</script>
+{/block:ifhovertooltips}
+<script src="http://static.tumblr.com/ojd74qh/zfyn5qcpo/g.jquery.1.6.2.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#click").click(function(){
+    $("#guts").slideToggle("fast");
+  });
+  $("#click2").click(function(){
+    $("#guts2").slideToggle("fast");
+  });
+  $("#click3").click(function(){
+    $("#guts3").slideToggle("fast");
+  });
+});
+</script>
+
+<style type="text/css">
+
+ ::-webkit-scrollbar {width: 9px; height: 3px; background: #FFFFFF;}
+::-webkit-scrollbar-thumb {background-color:#e6e6e6; border-radius:4px;}
+ 
+ 
+-webkit-transition: all 0.4s ease-in-out;
+ 
+-moz-transition: all 0.4s ease-in-out;
+ 
+-o-transition: all 0.4s ease-in-out;
+
+a {
+text-decoration:none;
+-webkit-transition: all 0.7s ease-out;
+-moz-transition: all 0.7s ease-out;
+transition: all 0.7s ease-out;
+}
+
+a:hover {
+text-decoration:none;
+-webkit-transition: all 0.7s ease-out;
+-moz-transition: all 0.7s ease-out;
+transition: all 0.7s ease-out;
+}
+
+iframe#tumblr_controls, #ib{
+position:fixed !important;
+{block:ifwhitetumblrcontrols}
+-webkit-filter: invert(100%);
+{/block:ifwhitetumblrcontrols}
+{block:ifnotwhitetumblrcontrols}
+-webkit-filter: invert(50%);
+{/block:ifnotwhitetumblrcontrols}
+}
+
+
+
+#text img, #entry img {
+    height: auto;
+    max-width:100%;
+}
+.textitle{
+    font-weight:bold;
+    font-size:16px;
+    padding-bottom:8px;
+}
+#center{
+padding-top:3px;
+padding-bottom:3px;
+position:fixed !important;
+width:250px;
+height:207px;
+background-color:#fff;
+{block:PermalinkPage}
+width:410px;
+height:207px;
+{/block:PermalinkPage}
+}
+
+#posts{
+{block:indexpage}
+{block:if2columns}
+width:700px;
+{/block:if2columns}
+{block:ifnot2columns}
+width:600px;
+{/block:ifnot2columns}
+{/block:indexpage}
+{block:permalinkpage}
+width:860px;
+{/block:permalinkpage}
+margin-left:400px;
+margin-top: 0px;
+}
+
+body {
+padding: 0px;
+margin: 0px;
+{block:ifcolorscheme}
+{block:ifpinkcolorscheme}
+color:#f85f88;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+color:#449c7c;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+color:#2386c5;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+color:#000;
+{/block:ifgreycolorscheme}
+
+{block:ifcustomcolorscheme}
+color:{color:Text};
+{/block:ifcustomcolorscheme}
+{/block:ifcolorscheme}
+{block:ifnotcolorscheme}
+color:{color:Text};
+{/block:ifnotcolorscheme}
+font-family: tahoma;
+font-size: {text:BodyFontSize};
+line-height:14px;
+background-color: {color:Background};
+background-image:url({image:Background});
+background-attachment: fixed;
+background-size: cover;
+}
+
+a:link, a:active, a:visited{
+text-decoration:none;
+{block:ifcolorscheme}
+{block:ifpinkcolorscheme}
+color:#fa85a4;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+color:#60ba9a;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+color:#56abe1;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+color:#000;
+{/block:ifgreycolorscheme}
+
+{block:ifcustomcolorscheme}
+color:{color:link};
+{/block:ifcustomcolorscheme}
+{/block:ifcolorscheme}
+{block:ifnotcolorscheme}
+color:{color:link};
+{/block:ifnotcolorscheme}
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;}
+
+a:hover{
+color:{color:hover};
+text-shadow:0px 0px 20px #fff;
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out; 
+}
+
+#entry blockquote {
+      border-left: solid 2px {color:accents};
+      margin: 0;
+      padding-left: 10px;
+}
+.text p{
+    text-align:left;
+    margin-top: -5px;
+}
+#entry {
+border-radius:4px;
+margin:16px;
+float:left;
+padding:9px;
+{block:IndexPage}
+width:200px;
+{/block:IndexPage}
+padding-bottom:6px;
+z-index:100;
+box-shadow:2px 2px 2px #ccc;
+{block:ifentryborbgcolorscheme}
+{block:ifpinkcolorscheme}
+border:1px solid #fa85a4;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+border:1px solid #60ba9a;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+border:1px solid #56abe1;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+border:1px solid #000;
+{/block:ifgreycolorscheme}
+
+{block:ifcustomcolorscheme}
+border:1px solid {color:entryborbg};
+{/block:ifcustomcolorscheme}
+{/block:ifentryborbgcolorscheme}
+
+{block:ifnotentryborbgcolorscheme}
+border:1px solid {color:entryborbg};;
+{/block:ifnotentryborbgcolorscheme}
+background-color: {color:entrybg};
+font-size: 12px;
+line-height:15px;
+{block:PermalinkPage}
+margin-left:40px;
+max-width:400px;
+{/block:PermalinkPage}
+}
+#text, .txt, #entry #text, .text{
+    {block:PermalinkPage}width:400px;{/block:PermalinkPage}
+}
+#answer{
+    {block:IndexPage}
+    word-wrap:break-word;
+    {/block:IndexPage}
+}
+
+#entry .rblogp, #entry .notep{
+z-index:999999;
+position:absolute;
+width: 8px;
+height: 15px;
+overflow:hidden;
+top:5px;
+right:5;
+font-size: 16px;
+text-align: center;
+padding:5px;
+text-transform: uppercase;
+opacity:0.0;
+border-radius:4px;
+background-color: rgba(255,255,255,0.5);
+-webkit-transition: all 0.8s ease;
+-moz-transition: all 0.8s ease;
+transition: all 0.8s ease;
+-o-transition: all 0.8s ease; 
+}
+#entry .perma{
+z-index:999999;
+position:absolute;
+width: auto;
+height: 15px;
+overflow:hidden;
+bottom:0px;
+margin-bottom:-9px;
+right:10px;
+font-size: 11px;
+text-align: center;
+padding:5px;
+text-transform: uppercase;
+opacity:0.0;
+border-radius:4px;
+background-color: {color:accents};
+-webkit-transition: all 0.8s ease;
+-moz-transition: all 0.8s ease;
+transition: all 0.8s ease;
+-o-transition: all 0.8s ease; 
+}
+#entry .notep{
+    margin-left:20px;
+}
+
+#entry:hover .rblogp, #entry:hover .notep{
+overflow:visible;
+top:9px;
+opacity: 1;
+}
+#entry:hover .perma {
+    right:10px;
+    bottom:9px;
+    opacity: 1;
+}
+
+#entry .photo{
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; 
+}
+.photo img{
+    width:250px;
+}
+#entry .photo {
+    {block:iffadedimages}opacity:{text:imgopacity};{/block:iffadedimages}
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; 
+}
+#entry:hover .photo{
+    {block:ifnotfadedimages}opacity:{text:imgopacity};{/block:ifnotfadedimages}
+    {block:iffadedimages}opacity:1;{/block:iffadedimages}
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; 
+}
+#cap {
+    max-width:250px;
+    word-wrap:break-word;
+}
+.perm{
+display: block; 
+font-size:9px;
+line-height:13px;
+text-transform:uppercase; 
+text-align: right; 
+background-color:{color:accents}; 
+border-right:3px {color:accents} solid;
+padding:3px;
+opacity:.8;
+margin: 0px;
+margin-bottom:5px;
+-webkit-transition: all 1s ease;
+-moz-transition: all 1s ease;
+transition: all 1s ease;
+-o-transition: all 1s ease; 
+}
+
+.perm:hover{
+opacity:.6; 
+}
+
+.blogtitle{
+font-size:14px; 
+line-height:19px;
+margin-top:-90px;
+letter-spacing:3px;
+z-index:99;
+opacity:.9;
+font-family:tahoma;
+text-transform:uppercase;
+-webkit-transition: all 0.3s linear;
+-moz-transition: all 0.3s linear;
+transition: all 0.3s linear;
+
+}
+
+.blogtitlelink:hover{
+opacity:.75;
+color: black;
+-webkit-transition: all 0.3s linear;
+-moz-transition: all 0.3s linear;
+transition: all 0.3s linear; 
+}
+
+.title{
+text-transform:lowercase;
+font-size: 19px;
+line-height: 24px;
+{block:ifcolorscheme}
+{block:ifpinkcolorscheme}
+color:#fa85a4;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+color:#60ba9a;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+color:#56abe1;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+color:#000;
+{/block:ifgreycolorscheme}
+
+{block:ifcustomcolorscheme}
+color:{color:Text};
+{/block:ifcustomcolorscheme}
+{/block:ifcolorscheme}
+{block:ifnotcolorscheme}
+color:{color:text};
+{/block:ifnotcolorscheme}
+}
+
+#sidebar{ 
+background-color:white;
+z-index:999;
+width:150px;
+height:auto;
+position:fixed; 
+margin-left:160px;
+padding:14px;
+margin-top:200px;
+font-size:11px;
+line-height:15px;
+overflow:hidden;
+text-align:left;
+opacity:1;
+-webkit-transition: all 0.8s linear;
+-moz-transition: all 0.8s linear;
+transition: all 0.8s linear;
+box-shadow:2px 2px 2px #ccc;
+border-radius:5px;
+{block:ifentryborbgcolorscheme}
+{block:ifpinkcolorscheme}
+border:1px solid #fa85a4;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+border:1px solid #60ba9a;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+border:1px solid #56abe1;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+border:1px solid #000;
+{/block:ifgreycolorscheme}
+
+{block:ifcustomcolorscheme}
+border:1px solid {color:sideborbg};
+{/block:ifcustomcolorscheme}
+{/block:ifentryborbgcolorscheme}
+}
+.avatar {
+    display:none;
+}
+.pano img{
+    max-width:250px;
+}
+.sidepic{
+    width:100%;
+}
+#desc{
+    margin-top:0px;
+    font-size:{text:descfontsize};
+}
+.navalt a{
+    {block:ifpinkcolorscheme}
+background-color:#fb98b2;
+border:1px solid #fb98b2;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#97d2bd;
+border:1px solid #97d2bd;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#99cced;
+border:1px solid #99cced;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#000;
+border:1px solid #000;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav1};
+border:1px solid {color:nav1};
+{/block:ifcustomcolorscheme}
+}
+.nav a{
+{block:ifpinkcolorscheme}
+background-color:#fb98b2;
+border:1px solid #fb98b2;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#97d2bd;
+border:1px solid #97d2bd;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#99cced;
+border:1px solid #99cced;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#000;
+border:1px solid #000;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav1};
+border:1px solid {color:nav1};
+{/block:ifcustomcolorscheme}
+z-index:99999999999999999999;
+border-radius:4px;
+height:4px;
+padding:3px;
+width:4px;
+margin-left:0px;
+line-height:9px;
+text-align:center;
+letter-spacing:1px;
+color:transparent;
+text-transform:uppercase;
+font-family:calibri;
+display:block;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
+}
+
+
+.nav a:hover {
+opacity:1;
+background-color:#fff;
+font-style:none;
+border:1px solid #efefef;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
+}
+
+.nav1 a{
+{block:ifpinkcolorscheme}
+background-color:#fcabc0;
+border:1px solid #fcabc0;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#a5d8c6;
+border:1px solid #a5d8c6;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#aad4f0;
+border:1px solid #aad4f0;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#666;
+border:1px solid #666;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav2};
+border:1px solid {color:nav2};
+{/block:ifcustomcolorscheme}
+z-index:9;
+border-radius:4px;
+height:4px;
+margin-left:15px;
+padding:3px;
+width:4px;
+line-height:9px;
+text-align:center;
+margin-top:-12px;
+letter-spacing:1px;
+color:transparent;
+text-transform:uppercase;
+font-family:calibri;
+display:block;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
+}
+
+
+.nav1 a:hover {
+opacity:1;
+background-color:#fff;
+font-style:none;
+border:1px solid #efefef;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
+}
+
+.nav2 a{
+{block:ifpinkcolorscheme}
+background-color:#fdbece;
+border:1px solid #fdbece;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#b2dece;
+border:1px solid #b2dece;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#baddf3;
+border:1px solid #baddf3;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#999;
+border:1px solid #999;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav3};
+border:1px solid {color:nav3};
+{/block:ifcustomcolorscheme}
+z-index:9;
+border-radius:4px;
+height:4px;
+margin-left:30px;
+padding:3px;
+width:4px;
+line-height:9px;
+text-align:center;
+margin-top:-12px;
+letter-spacing:1px;
+color:transparent;
+text-transform:uppercase;
+font-family:calibri;
+display:block;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
+}
+
+
+.nav2 a:hover {
+opacity:1;
+background-color:#fff;
+font-style:none;
+border:1px solid #efefef;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
+}
+
+.nav3 a{
+{block:ifpinkcolorscheme}
+background-color:#fdd1dc;
+border:1px solid #fdd1dc;
+
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#c0e4d7;
+border:1px solid #c0e4d7;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#cbe5f6;
+border:1px solid #cbe5f6;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#aaa;
+border:1px solid #aaa;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav4};
+border:1px solid {color:nav4};
+{/block:ifcustomcolorscheme}
+z-index:9;
+border-radius:4px;
+height:4px;
+padding:3px;
+width:4px;
+margin-left:45px;
+line-height:9px;
+text-align:center;
+margin-top:-12px;
+letter-spacing:1px;
+color:transparent;
+text-transform:uppercase;
+font-family:calibri;
+display:block;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
+}
+
+
+.nav3 a:hover {
+opacity:1;
+background-color:#fff;
+font-style:none;
+border:1px solid #efefef;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
+}
+
+.nav4 a{
+{block:ifpinkcolorscheme}
+background-color:#fee4eb;
+border:1px solid #fee4eb;
+
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#ceeae0;
+border:1px solid #ceeae0;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#dcedf9;
+border:1px solid #dcedf9;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#ddd;
+border:1px solid #ddd;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav5};
+border:1px solid {color:nav5};
+{/block:ifcustomcolorscheme}
+z-index:9;
+border-radius:4px;
+height:4px;
+padding:3px;
+margin-left:60px;
+width:4px;
+line-height:9px;
+text-align:center;
+margin-top:-12px;
+letter-spacing:1px;
+color:transparent;
+text-transform:uppercase;
+font-family:calibri;
+display:block;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
+}
+
+
+.nav4 a:hover {
+opacity:1;
+background-color:#fff;
+font-style:none;
+border:1px solid #efefef;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
+}
+
+.nav5 a{
+{block:ifpinkcolorscheme}
+background-color:#fff7f9;
+border:1px solid #fff7f9;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+background-color:#dbf0e8;
+border:1px solid #dbf0e8;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+background-color:#ecf6fc;
+border:1px solid #ecf6fc;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+background-color:#f1f1f1;
+border:1px solid #f1f1f1;
+{/block:ifgreycolorscheme}
+{block:ifcustomcolorscheme}
+background-color:{color:nav6};
+border:1px solid {color:nav6};
+{/block:ifcustomcolorscheme}
+z-index:9;
+border-radius:4px;
+height:4px;
+padding:3px;
+margin-left:75px;
+width:4px;
+line-height:9px;
+text-align:center;
+margin-top:-12px;
+letter-spacing:1px;
+color:transparent;
+text-transform:uppercase;
+font-family:calibri;
+display:block;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
+}
+
+
+.nav5 a:hover {
+opacity:1;
+background-color:#fff;
+font-style:none;
+border:1px solid #efefef;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
+}
+
+#s-m-t-tooltip{
+  /* basic */
+  width:auto;
+  z-index:9999;
+  margin:24px 14px 7px 12px;
+  /* style and design */
+  padding:2px;
+  background:#222; /* fallback if rgba not supported */
+  background:rgba(255,255,255,0.8);
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  -moz-box-shadow:2px 2px 0 rgba(0,0,0,0.15),-1px -1px 0 rgba(255,255,255,0.3);
+  -webkit-box-shadow:2px 2px 0 rgba(0,0,0,0.15),-1px -1px 0 rgba(255,255,255,0.3);
+  box-shadow:2px 2px 0 rgba(0,0,0,0.15),-1px -1px 0 rgba(255,255,255,0.3);
+  /* font */
+  font-family:Verdana,Geneva,sans-serif;
+  font-size:9px;
+  line-height:16px;
+  {block:ifnotcolorscheme}
+color:{color:tooltips};
+{/block:ifnotcolorscheme}
+{block:ifcolorscheme}
+    {block:ifpinkcolorscheme}
+color:#fa85a4;
+{/block:ifpinkcolorscheme}
+
+{block:ifgreencolorscheme}
+color:#60ba9a;
+{/block:ifgreencolorscheme}
+
+{block:ifbluecolorscheme}
+color:#56abe1;
+{/block:ifbluecolorscheme}
+
+{block:ifgreycolorscheme}
+color:#000;
+{/block:ifgreycolorscheme}
+
+{block:ifcustomcolorscheme}
+color:{color:Text};
+{/block:ifcustomcolorscheme}
+{/block:ifcolorscheme}
+}
+
+   
+#updates{
+    position:fixed;
+    width:80px;
+    top:20px;
+    left:20px;
+    padding-top:7px;
+    padding-left:7px;
+    padding-right:7px;
+    padding-top:4px;
+    font-family:consolas;
+    font-size:9px;
+    line-height:12px;
+    background-color:#ffffff; /*background hex color code*/
+    {block:ifentryborbgcolorscheme}
+    {block:ifpinkcolorscheme}
+    border:1px solid #fa85a4;
+    {/block:ifpinkcolorscheme}
+    
+    {block:ifgreencolorscheme}
+    border:1px solid #60ba9a;
+    {/block:ifgreencolorscheme}
+    
+    {block:ifbluecolorscheme}
+    border:1px solid #56abe1;
+    {/block:ifbluecolorscheme}
+    
+    {block:ifgreycolorscheme}
+    border:1px solid #000;
+    {/block:ifgreycolorscheme}
+    
+    {block:ifcustomcolorscheme}
+    border:1px solid {color:entryborbg};
+    {/block:ifcustomcolorscheme}
+    {/block:ifentryborbgcolorscheme}
+    
+    {block:ifcolorscheme}
+    {block:ifpinkcolorscheme}
+    color: #fa85a4;
+    {/block:ifpinkcolorscheme}
+    
+    {block:ifgreencolorscheme}
+    color: #60ba9a;
+    {/block:ifgreencolorscheme}
+    
+    {block:ifbluecolorscheme}
+    color: #56abe1;
+    {/block:ifbluecolorscheme}
+    
+    {block:ifgreycolorscheme}
+    color: solid #000;
+    {/block:ifgreycolorscheme}
+    
+    {block:ifcustomcolorscheme}
+    color: {color:Text};
+    {/block:ifcustomcolorscheme}
+    {/block:ifcolorscheme}
+    z-index:999;
+    /*delete the following for no shadows*/
+    box-shadow:rgba(0,0,0,0.07)1px 1px;
+    /*delete the following for no rounded edges*/
+    border-radius: 5px;
+}
+ 
+#guts,#click{
+    padding:1px;
+    display:inline-block;
+}
+   
+#click{
+    margin-bottom:4px;
+    padding:1px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center;
+    background:#f4f4f4; /*tab 1 background color*/
+    border:1px solid #f4f4f4;
+    padding:1px;
+    display:block;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    /*delete the following for no rounded edges*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+   
+#click:hover{
+    cursor:help;
+}
+ 
+#click:active{
+    background:#f4f4f4; /*color of tab when clicked*/
+}
+   
+#guts{
+    padding:1px;
+    display:none;
+}
+ 
+#guts2,#click2{
+    padding:1px;
+    display:inline-block;
+}
+   
+#click2{
+    margin-bottom:4px;
+    padding:1px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center;
+    background:#f4f4f4; /*tab 2 background color*/
+    border:1px solid #f4f4f4;
+    padding:1px;
+    display:block;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    /*delete the following for no rounded edges*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+   
+#click2:hover{
+    cursor:help;
+}
+ 
+#click2:active{
+    background:#f4f4f4; /*color of tab when clicked*/
+}
+   
+#guts2{
+    padding:1px;
+    display:none;
+}
+ 
+#guts3,#click3{
+    padding:1px;
+    display:inline-block;
+}
+   
+#click3{
+    margin-bottom:4px;
+    padding:1px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center;
+    background:#f4f4f4; /*tab 3 background color*/
+    border:1px solid #f4f4f4;
+    padding:1px;
+    display:block;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    /*delete the following for no rounded edges*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+   
+#click3:hover{
+    cursor:help;
+}
+ 
+#click3:active{
+    background:#f4f4f4; /*color of tab when clicked*/
+}
+   
+#guts3{
+    padding:1px;
+    display:none;
+}
+
+{CustomCSS}
+
+</style>
+
+<title>{title}</title>
+<link rel="shortcut icon" href="{favicon}">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+<meta name="viewport" content="width=720" />
+
+</head>
+
+<body onkeydown="return false">
+
+<div class="center">
+<div id="sidebar">
+
+<a title="{Title}" href="/">{block:ifsidebarpic}<img class="sidepic" title="{Title}" src="{image:sidebarpic}"/>{/block:ifsidebarpic}</a>
+
+
+<div id="desc">{description}</div>
+
+<br />
+
+{block:ifnotTextLinks}
+<div class="nav"><a href="/" title="{text:homelinktitle}">-</a></div>
+<div class="nav1"><a href="/ask" title="{text:msglinktitle}">-</a> </div>
+<div class="nav2"><a href="{text:link1}" title="{text:link1title}">-</a>
+</div>
+<div class="nav3"><a href="{text:link2}" title="{text:link2title}">-</a></div>
+<div class="nav4"><a href="{text:link3}" title="{text:link3title}">-</a></div>
+<div class="nav5"><span id="inner"></span></div>
+{/block:ifnotTextLinks}
+{block:ifTextLinks}
+<div class="altnav">
+    <a href="/" title="{text:home link title}">{text:home link title}</a> //
+    <a href="/ask" title="{text:msg link title}">{text:msg link title}</a> {block:iflink1} //
+    <a href="{text:link 1}" title="{text:link 1 title}">{text:link 1 title}</a>{/block:iflink1}{block:iflink2} //
+    <a href="{text:link 2}" title="{text:link 2 title}">{text:link 2 title}</a>{/block:iflink2}{block:iflink3} //
+    <a href="{text:link 3 }" title="{text:link 3 title}">{text:link 3 title}</a> {/block:iflink3} //
+    <span id="inner"></span>
+</div>
+{/block:ifTextLinks}
+<!-- -->
+</div>
+
+
+<div class="content">
+
+<div class="left">
+
+<div id="posts">
+
+{block:Posts}
+<div id="entry">
+
+
+{block:Photo}
+{block:IndexPage}
+<div class="rblogp"><a title="reblog" href="{ReblogURL}" target="_blank">&#9675;</a></div>
+<div class="notep"><a title="{NoteCountWithLabel}" href="{Permalink}">&#9679;</a></div>
+{/block:IndexPage}
+{block:IndexPage}
+<div class="photo">{LinkOpenTag}<a href="{permalink}"><img title="posted {TimeAgo}" width="200" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" /></a>{LinkCloseTag}</div>
+{block:ifShowCaptions}{block:Caption}<div id="cap">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
+{/block:IndexPage}
+{block:PermalinkPage}{LinkOpenTag}<a href="{permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="500"/></a>{LinkCloseTag}{/block:PermalinkPage}
+{/block:Photo}
+
+
+
+{block:Text}
+<div class="txt">
+{block:Title}<div class="textitle">{Title}</div>{/block:Title}
+<div class="text">{Body}</div></div>
+{block:IndexPage}
+{block:ifHoverPerma}
+<div class="perma"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifHoverPerma}
+{block:ifnotHoverPerma}
+<div class="perm"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifnotHoverPerma}
+{/block:IndexPage}
+{/block:Text}
+
+
+
+
+{block:Link}
+<a href="{URL}" class="title">{Name}</a>
+{block:Description}{Description}{/block:Description}
+{block:IndexPage}
+{block:ifHoverPerma}
+
+<div class="perma"><a href="{Permalink}">{notecount}</a></div>
+
+{/block:ifHoverPerma}
+{block:ifnotHoverPerma}
+
+<div class="perm"><a href="{Permalink}">{notecount}</a></div>
+
+{/block:ifnotHoverPerma}
+{/block:IndexPage}
+{block:Link}
+
+
+
+{block:Panorama}
+{block:IndexPage}
+<div class="rblogp"><a title="reblog" href="{ReblogURL}" target="_blank">&#9675;</a></div>
+<div class="notep"><a title="{NoteCountWithLabel}" href="{Permalink}">&#9679;</a></div>
+{/block:IndexPage}
+{block:IndexPage}
+    {LinkOpenTag}<div class="photo"><img class="pano" src="{PhotoURL-Panorama}" title="posted {TimeAgo}" alt="{PhotoAlt}" width="260"/></div>{LinkCloseTag}
+    {block:ifShowCaptions}{block:Caption}<div id="cap">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
+        {Caption}
+    {/block:PermalinkPage}
+{/block:Panorama}
+
+
+{block:Photoset}{block:IndexPage}
+<div class="rblogp"><a title="reblog" href="{ReblogURL}" target="_blank">&#9675;</a></div>
+<div class="notep"><a title="{NoteCountWithLabel}" href="{Permalink}">&#9679;</a></div>
+<center><div title="posted {TimeAgo}" id="photset">{Photoset}</div></center></span>
+{block:ifShowCaptions}{block:Caption}<div id="cap">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
+{/block:IndexPage}
+{block:PermalinkPage}
+{Photoset}
+{/block:PermalinkPage}
+{/block:Photoset}
+
+{block:Quote}
+<span class="title">{Quote}</span><br />
+{block:Source}{Source}{/block:Source}
+{block:IndexPage}
+{block:ifHoverPerma}
+
+<br /><div class="perma"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifHoverPerma}
+{block:ifnotHoverPerma}
+<br /><div class="perm"><a href="{Permalink}">{notecount}</span></a></div>
+
+{/block:ifnotHoverPerma}
+{/block:IndexPage}
+{/block:Quote}
+
+{block:Chat}
+{block:Title}<span class="title">{Title}</span>{/block:Title}
+<ul class="chat">
+{block:Lines}
+<li class="user_{UserNumber}">
+{block:Label}
+<span class="label">{Label}</span>
+{/block:Label}
+
+{Line}
+</li>
+{/block:Lines}
+</ul>
+{block:IndexPage}
+{block:ifHoverPerma}
+<div class="perma"><a href="{Permalink}">{notecount}</span></a></div>
+{block:ifHoverPerma}
+{block:ifnotHoverPerma}
+<div class="perm"><a href="{Permalink}">{notecount}</span></a></div>
+{block:ifnotHoverPerma}
+{/block:IndexPage}
+{/block:Chat}
+
+{block:Audio}
+<center><div style="width:200px; height:20px;"><div style="float:left">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
+{FormattedPlayCount} plays</small></div></div></center><br>
+{block:Caption}{Caption}{/block:Caption}
+{block:IndexPage}
+{block:ifHoverPerma}
+<div class="perma"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifHoverPerma}
+{block:ifnotHoverPerma}
+<div class="perm"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifnotHoverPerma}
+{/block:IndexPage}
+{/block:Audio}
+
+{block:Video}{block:IndexPage}
+<div class="permalink">
+<a href="{permalink}">{NoteCount}</a></span></div>{/block:IndexPage}
+<center>
+<div class="videoperma">{Video-300}</div><BR>
+{block:Caption}{Caption}</a>{/block:Caption}</center>
+{block:Video}
+
+{block:Answer}
+<div class="text">
+<div class="question"><strong>{Asker} asks</strong>: {Question}<br/></div>
+<div id="answer">{Answer}</div>
+</div>
+{block:IndexPage}
+{block:ifHoverPerma}
+<div class="perma"><a href="{permalink}">{notecount}</a></div>
+{/block:ifHoverPerma}
+{block:ifnotHoverPerma}
+<div class="perm"><a href="{permalink}">{notecount}</a></div>
+{block:ifnotHoverPerma}
+{/block:IndexPage}
+{/block:Answer}
+
+{block:PermalinkPage}
+<div id="permalinks">
+{block:Date} {TimeAgo}, {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}, {Year}{/block:Date} {block:NoteCount}/ {NoteCountWithLabel}{/block:NoteCount}
+{block:RebloggedFrom}</br>Original: <a href="{ReblogRootURL}">{ReblogRootName}</a> / Via: <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom}
+{block:HasTags}</br>Tagged as: {block:Tags}#<a href="{TagURL}">{Tag}</a> {/block:Tags}{/block:HasTags}
+{block:PostNotes}{PostNotes}{/block:PostNotes}</div>
+</span>{/block:PermalinkPage}
+
+</div>
+
+{/block:Posts}
+</div>
+</div> 
+</div>
+</div>{block:indexpage}
+{block:NextPage}<div id="pagination"><a href="{NextPage}"></a></div>{/block:NextPage}{/block:indexpage}
+
+</div>
+{block:ifupdatebox}
+<div id="updates">
+
+<!-- delete this part to take off bar and buttons-->
+
+<!--end-->
+
+<div title="click!" id="click">{text:tab 1 title}</div>
+<div id="guts">
+{text:tab 1}
+</div>
+
+<div title="click!" id="click2">{text:tab 2 title}</div>
+<div id="guts2">
+{block:ifsocialnetworks}
+{block:iffbusername}
+<a href="http://facebook.com/{text:fbusername}" title="/{text:fbusername}" target="_blank"><img src="http://static.tumblr.com/4ra4qv5/mjhn4jy7j/facebook_round.png" width="30"/></a>{/block:iffbusername}
+
+{block:iftwitterusername}<a href="http://twitter.com/{text:twitterusername}" title="@{text:twitterusername}" target="_blank"><img src="http://static.tumblr.com/4ra4qv5/WPCn4jy7e/twitter_round.png" width="30"/></a>{/block:iftwitterusername}
+
+{block:ifigusername}
+<a href="http://instagram.com/{text:igusername}" title="@{text:igusername}" target="_blank"><img src="http://static.tumblr.com/4ra4qv5/xrin4jy7q/instagram_round.png" width="30"/></a>{/block:ifigusername}
+
+{block:ifkikusername}<p>kik: {text:kikusername}</p>{/block:ifkikusername}
+
+{block:ifsnapchatusername}<p>snapchat: {text:snapchatusername}</p>{/block:ifsnapchatusername}
+
+{/block:ifsocialnetworks}
+{block:ifnotsocialnetworks}
+{text:tab2}
+{/block:ifnotsocialnetworks}
+</div>
+
+<div title="click!" id="click3">{text:tab 3 title}</div>
+<div id="guts3">
+{text:tab 3}
+</div>
+
+</div>
+{/block:ifupdatebox}
+
+
+{block:indexpage}
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
+<script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+//http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
+    var $container = $('#posts');
+       
+    // Fire Isotope only when images are loaded
+    $container.imagesLoaded(function(){
+        $container.isotope({
+            itemSelector : '#entry',
+            masonry: {
+            }
+        });
+    });
+ 
+    // Infinite Scroll
+    $('#posts').infinitescroll({
+        navSelector  : '#pagination', 
+        nextSelector : '#pagination a', 
+        itemSelector : '#entry',
+        bufferPx     : 200,
+        loading: {
+            finishedMsg: '',
+        }
+    },
+ 
+    // Infinite Scroll Callback
+    function( newElements ) {
+        var $newElems = jQuery( newElements ).hide(); 
+        $newElems.imagesLoaded(function(){
+            $newElems.fadeIn();
+            $container.isotope( 'appended', $newElems );
+        });
+    });
+ 
+});
+</script>
+
+
+{/block:indexpage}
+</body>
+</html>

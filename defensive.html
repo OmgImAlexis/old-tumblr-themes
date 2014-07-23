@@ -10,7 +10,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
                                
-defensive theme v1.8                                
+defensive theme v1.9                                
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -216,7 +216,7 @@ transition: all 0.8s ease;
 -o-transition: all 0.8s ease;}
 
 .perma1, .perma2, .perm, .perm2{
-    font-family:silkscreen, 'courier new', monospace;
+    font-family:silkscreen,'courier new',monospace,consolas;
     font-size:8px;}
     
 .perm{display: block; 
@@ -256,7 +256,7 @@ background-color:{color:entrybg};
 -webkit-transition: all 0.8s linear;
 -moz-transition: all 0.8s linear;
 transition: all 0.8s linear; 
-font-family:silkscreen, arial;}
+font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;}
 
 .avatar {display:none;}
 .pano img{max-width:260px;}
@@ -299,6 +299,15 @@ span.entrytext > p {margin-top: 1px;}
 .photo img{width:100%;}
 .index-page .1stphoto img {display: none;}
 .index-page .1stphoto img:first-child {display: block;}
+.bubble-question{
+    border-radius:5px;
+    background-color:#fafafa;
+    padding:10px;
+    border:1px solid #eee;
+}
+.answerer{
+    margin-bottom:-5px;
+}
 {CustomCSS}
 
 </style>
@@ -478,6 +487,31 @@ span.entrytext > p {margin-top: 1px;}
 <div class="post video">{Video-400}</div>
 {/block:PermalinkPage}
 {/block:Video}
+
+
+{block:Answer}
+    <div class="question">
+        <div class="bubble-question">
+            {Asker}: {Question}
+        </div>
+    </div>
+    {block:Answerer}
+        <div class="answer">
+            <p class="answerer">{Answerer}:</p>
+            <blockquote><div class="answerer-answer">{Answer}</div></blockquote>
+        </div>
+    {/block:Answerer}
+
+    <div class="replies">
+        {Replies}
+    </div>
+{block:IndexPage}
+<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+{/block:IndexPage}
+{/block:Answer}
+
+
 
 {block:PermalinkPage}
 

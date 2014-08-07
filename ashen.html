@@ -14,8 +14,11 @@ designed & manufactured by alex: http://rowrz.com/
 help with ideas by shantel: http://discountable.tk/
 http://rowrz.tumblr.com/themes
 -->
+<!DOCTYPE html>
 <html>
 <head>
+
+
 
 <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
 {block:Description}
@@ -87,14 +90,15 @@ http://rowrz.tumblr.com/themes
 <meta name="text:link 3 title" content=""/>
 <meta name="text:link 3" content=""/>
 
+
+
 <script src="http://static.tumblr.com/ojd74qh/LCQn7c8wv/g.jquery.1.11.0.min.ashen.js"></script>
 
 <link href="http://static.tumblr.com/ojd74qh/nF6n4lotj/style-my-tooltips.css" rel="stylesheet" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
-{block:ifhovertooltips}
 <script src="http://static.tumblr.com/ojd74qh/2nFn4lotg/jquery.style-my-tooltips.js"></script>
 
+{block:ifhovertooltips}
 <script>
     (function($){
         $(document).ready(function(){
@@ -125,7 +129,7 @@ $(document).ready(function(){
 
 <style type="text/css">
 
-::-webkit-scrollbar {width: 9px; height: 3px; background: #FFFFFF;}
+ ::-webkit-scrollbar {width: 9px; height: 3px; background: #FFFFFF;}
 ::-webkit-scrollbar-thumb {background-color:#e6e6e6; border-radius:4px;}
  
  
@@ -326,6 +330,9 @@ margin-left:40px;
 max-width:400px;
 {/block:PermalinkPage}
 }
+{block:IndexPage}    
+    div.video iframe, div.video embed{width:200px;}
+{/block:IndexPage} 
 #text, .txt, #entry #text, .text{
     {block:PermalinkPage}width:400px;{/block:PermalinkPage}
 }
@@ -1090,7 +1097,11 @@ color:{color:Text};
     padding:1px;
     display:none;
 }
-
+.bubble-question{border-radius:5px;
+    background-color:#fafafa;
+    padding:10px;
+    border:1px solid #eee;}
+.answerer{margin-bottom:-5px;}
 {CustomCSS}
 
 </style>
@@ -1276,28 +1287,50 @@ color:{color:Text};
 {/block:IndexPage}
 {/block:Audio}
 
-{block:Video}{block:IndexPage}
-<div class="permalink">
-<a href="{permalink}">{NoteCount}</a></span></div>{/block:IndexPage}
-<center>
-<div class="videoperma">{Video-300}</div><BR>
-{block:Caption}{Caption}</a>{/block:Caption}</center>
 {block:Video}
-
-{block:Answer}
-<div class="text">
-<div class="question"><strong>{Asker} asks</strong>: {Question}<br/></div>
-<div id="answer">{Answer}</div>
-</div>
 {block:IndexPage}
+<div class="post video">{Video-250}</div>
+
+{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+<div style="padding-top:5px"></div>
 {block:ifHoverPerma}
-<div class="perma"><a href="{permalink}">{notecount}</a></div>
+<div class="perma"><a href="{Permalink}">{notecount}</span></a></div>
 {/block:ifHoverPerma}
 {block:ifnotHoverPerma}
-<div class="perm"><a href="{permalink}">{notecount}</a></div>
+<div class="perm"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifnotHoverPerma}
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="post video">{Video-400}</div>
+{/block:PermalinkPage}
+{/block:Video}
+
+{block:Answer}
+    <div class="question">
+        <div class="bubble-question">
+            {Asker}: {Question}
+        </div>
+    </div>
+    {block:Answerer}
+        <div class="answer">
+            <p class="answerer">{Answerer}:</p>
+            <blockquote><div class="answerer-answer">{Answer}</div></blockquote>
+        </div>
+    {/block:Answerer}
+
+    <div class="replies">
+        {Replies}
+    </div>
+{block:IndexPage}
+{block:ifHoverPerma}
+<div class="perma"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifHoverPerma}
 {block:ifnotHoverPerma}
+<div class="perm"><a href="{Permalink}">{notecount}</span></a></div>
+{/block:ifnotHoverPerma}
 {/block:IndexPage}
 {/block:Answer}
+
 
 {block:PermalinkPage}
 <div id="permalinks">

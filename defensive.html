@@ -14,6 +14,7 @@ defensive theme v1.8
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -223,27 +224,25 @@ transition: all 1s ease;
 -o-transition: all 1s ease; 
 float:right;}
 
-
-.sidebar{z-index:98;
-width:100px;
-max-height:300px;
-position:fixed;
+.sidebar{margin-top:125px;
 left:200px;
-padding:14px;
+position:fixed;
 line-height:15px;
 overflow:hidden;
 text-align:left;
 opacity:1;
-margin-top:100px;
 font-size:8px;
-{block:ifBorders}
-border:1px solid {color:borders};
-{block:ifBorders}
-background-color:{color:entrybg};
+z-index:98;
 -webkit-transition: all 0.8s linear;
 -moz-transition: all 0.8s linear;
 transition: all 0.8s linear; 
 font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;}
+.sidebar .sideguts{background-color:{color:entrybg};
+padding:14px;
+width:100px;
+{block:ifBorders}
+    border:1px solid {color:borders};
+{block:ifBorders}}
 
 .avatar {display:none;}
 .pano img{max-width:260px;}
@@ -306,37 +305,40 @@ span.entrytext > p {margin-top: 1px;}
 <div class="left">
 
 <div class="sidebar">
-    <!--the sidebar shit will go here-->
-    <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}
-        {block:ifnotUseAccountAvi}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvi}
-    </a>
-    <span class="desc">{Description}</span>
-    <br/>
-    <div id="nav">
-        {block:ifHomeLink}
-            <a class="nav" href="/">home</a>
-        {/block:ifHomeLink}
-        {block:AskEnabled}
-            {block:ifAskLink}
-                <a class="nav" href="/ask">msg</a>
-            {/block:ifAskLink}
-        {/block:AskEnabled}
-        {block:iflink1title}
-            <a class="nav" href="{text:link1}">{text:link1title}</a>
-        {/block:iflink1title}
-        {block:iflink2title}
-            <a class="nav" href="{text:link2}">{text:link2title}</a>
-        {/block:iflink2title}
-        {block:iflink3title}
-            <a class="nav" href="{text:link3}">{text:link3title}</a>
-        {/block:iflink3title}
-        {block:iflink4title}
-            <a class="nav" href="{text:link4}">{text:link4title}</a>
-        {/block:iflink4title}
-        {block:iflink5title}
-            <a class="nav" href="{text:link5}">{text:link5title}</a>
-        {/block:iflink5title}
-        <span id="inner"></span>
+    <div class="sideguts">
+        <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}
+            {block:ifnotUseAccountAvi}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvi}
+        </a>
+        <span class="desc">
+            {Description}
+        </span>
+        <br/>
+        <div id="nav">
+            {block:ifHomeLink}
+                <a class="nav" href="/">home</a>
+            {/block:ifHomeLink}
+            {block:AskEnabled}
+                {block:ifAskLink}
+                    <a class="nav" href="/ask">msg</a>
+                {/block:ifAskLink}
+            {/block:AskEnabled}
+            {block:iflink1title}
+                <a class="nav" href="{text:link1}">{text:link1title}</a>
+            {/block:iflink1title}
+            {block:iflink2title}
+                <a class="nav" href="{text:link2}">{text:link2title}</a>
+            {/block:iflink2title}
+            {block:iflink3title}
+                <a class="nav" href="{text:link3}">{text:link3title}</a>
+            {/block:iflink3title}
+            {block:iflink4title}
+                <a class="nav" href="{text:link4}">{text:link4title}</a>
+            {/block:iflink4title}
+            {block:iflink5title}
+                <a class="nav" href="{text:link5}">{text:link5title}</a>
+            {/block:iflink5title}
+            <span id="inner"></span>
+        </div>
     </div>
 </div>
 

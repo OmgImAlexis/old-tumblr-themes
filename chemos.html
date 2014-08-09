@@ -408,7 +408,17 @@ transition: all 0.3s linear;
 .avatar {
     display:none;
 }
-
+.bubble-question{border-radius:5px;
+    background-color:#fafafa;
+    padding:10px;
+    border:1px solid #eee;}
+.answerer{margin-bottom:-5px;}
+#entry blockquote {border-left: solid 2px {color:accents};
+      margin: 0;
+      padding-left: 10px;}
+{block:IndexPage}    
+   div.video iframe, div.video embed{width:250px;}
+{/block:IndexPage} 
 {CustomCSS}
 </style>
 
@@ -575,13 +585,39 @@ transition: all 0.3s linear;
 {/block:IndexPage}
 {/block:Audio}
 
-{block:Video}{block:IndexPage}
-<div class="permalink">
-<a href="{permalink}">{NoteCountWithLabel}</a> / <a href="{ReblogURL}" target="_blank"> REBLOG </a> / <a href="{permalink}">{TimeAgo}</a></span></div>{/block:IndexPage}
-<center>
-<div class="videoperma">{Video-300}</div><BR>
-{block:Caption}{Caption}</a>{/block:Caption}</center>
+{block:Answer}
+    <div class="question">
+        <div class="bubble-question">
+            {Asker}: {Question}
+        </div>
+    </div>
+    {block:Answerer}
+        <div class="answer">
+            <p class="answerer">{Answerer}:</p>
+            <blockquote><div class="answerer-answer">{Answer}</div></blockquote>
+        </div>
+    {/block:Answerer}
+
+    <div class="replies">
+        {Replies}
+    </div>
+{block:IndexPage}
+<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+{/block:IndexPage}
+{/block:Answer}
+
 {block:Video}
+{block:IndexPage}
+<div class="post video">{Video-250}</div>
+
+{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+<div style="padding-top:5px"></div>
+<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="post video">{Video-400}</div>
+{/block:PermalinkPage}
+{/block:Video}
 
 {block:PermalinkPage}
 

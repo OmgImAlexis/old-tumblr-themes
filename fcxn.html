@@ -32,7 +32,7 @@ _ __ _____      ___ __ ____
 <meta name="color:Link" content="#000000"/>
 <meta name="color:navodd" content="#000000"/>
 <meta name="color:naveven" content="#ff0000"/>
-<meta name="color:accents" content="#c2c2c2"/>
+<meta name="color:accents" content="#eeeeee"/>
 <meta name="color:linkhover" content="#FFFFFF"/>
 <meta name="color:title" content="#000000"/>
 <meta name="color:blogtitle" content="" />
@@ -358,7 +358,12 @@ transition:all 0.7s ease-out
 .avatar {
     display:none;
 }
-
+#entry blockquote {border-left: solid 2px {color:accents};
+      margin: 0;
+      padding-left: 10px;}
+{block:IndexPage}    
+   div.video iframe, div.video embed{width:100%;}
+{/block:IndexPage} 
 {CustomCSS}
 </style>
 
@@ -490,7 +495,7 @@ transition:all 0.7s ease-out
 {/block:Chat}
 
 {block:Audio}
-<center><div style="width:200px; height:20px;"><div style="float:left">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
+<center><div><div style="padding-top:5px;">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
 {FormattedPlayCount} plays</small></div></div></center><br>
 {block:Caption}{Caption}{/block:Caption}
 {block:IndexPage}
@@ -498,13 +503,19 @@ transition:all 0.7s ease-out
 {/block:IndexPage}
 {/block:Audio}
 
-{block:Video}{block:IndexPage}
-<div class="permalink">
-<a href="{permalink}">{NoteCountWithLabel}</a> / <a href="{ReblogURL}" target="_blank"> REBLOG </a> / <a href="{permalink}">{TimeAgo}</a></span></div>{/block:IndexPage}
-<center>
-<div class="videoperma">{Video-300}</div><BR>
-{block:Caption}{Caption}</a>{/block:Caption}</center>
+
 {block:Video}
+{block:IndexPage}
+<div class="post video">{Video-250}</div>
+
+{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+<div style="padding-top:5px"></div>
+<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="post video">{Video-400}</div>
+{/block:PermalinkPage}
+{/block:Video}
 
 {block:PermalinkPage}
 {block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}{block:HasTags} &middot; {block:Tags}<a href="TagURL"> #{Tag}</a> {/block:Tags}{/block:hasTags}

@@ -499,7 +499,7 @@ span.entrytext > p {margin-top: 1px;}
 
 {block:PermalinkPage}
 
-{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}{block:HasTags} &middot; {block:Tags}<a href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
+{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}, {block:RebloggedFrom}Reblogged: {/block:RebloggedFrom}{block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags}, &middot; {block:Tags}<a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
 
 {/block:PermalinkPage}
 

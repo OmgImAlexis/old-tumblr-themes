@@ -290,6 +290,11 @@ span.entrytext > p {margin-top: 1px;}
     padding:10px;
     border:1px solid #eee;}
 .answerer{margin-bottom:-5px;}
+div.bubble-answer > p {display: inline;}
+.bubble-answer{border-radius:5px;
+    background-color:#fafafa;
+    padding:10px;
+    border:1px solid #eee;}
 {CustomCSS}
 
 </style>
@@ -481,8 +486,7 @@ span.entrytext > p {margin-top: 1px;}
     </div>
     {block:Answerer}
         <div class="answer">
-            <p class="answerer">{Answerer}:</p>
-            <blockquote><div class="answerer-answer">{Answer}</div></blockquote>
+            <p><div class="bubble-answer">{Answerer}: {Answer}</div></p>
         </div>
     {/block:Answerer}
 

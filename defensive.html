@@ -294,6 +294,11 @@ div.bubble-answer > p {display: inline;}
 .quote_source_mdash,.quote_source{vertical-align:text-top;
 font-size:10px;}
 .quote_source{margin:0;}
+{block:ifnotInfiniteScroll}
+    .desc-pagination{text-align:center;
+    margin-top:2px;}
+    .prev-nav-button{display:inline;}
+{/block:ifnotInfiniteScroll}
 {CustomCSS}
 
 </style>
@@ -344,6 +349,29 @@ font-size:10px;}
             <span id="inner"></span>
         </div>
     </div>
+    {block:ifnotInfiniteScroll}
+    {block:Pagination}
+        <div id="pagination" class="desc-pagination">
+        
+              {block:JumpPagination length="5"}
+                    {block:CurrentPage}
+                          <span class="current_page">{PageNumber}</span>
+                    {/block:CurrentPage}
+        
+                    {block:JumpPage}
+                          <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} class="jump_page" href="{URL}">{PageNumber}</a>
+                    {/block:JumpPage}
+              {/block:JumpPagination}
+              <br/>
+                {block:PreviousPage}<span class="prev-nav-button">
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{PreviousPage}">Previous</a></span>
+              {/block:PreviousPage}
+              <span class="next-nav-button">
+              {block:NextPage}
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{NextPage}">Next</a>
+              {/block:NextPage}</span>
+        </div>
+{/block:Pagination}{/block:ifnotInfiniteScroll}
 </div>
 
 
@@ -527,10 +555,11 @@ font-size:10px;}
 </div>
 
 {block:indexpage}
-{block:Pagination}
+{block:ifInfiniteScroll}
+    {block:Pagination}
         <div id="pagination">
               {block:PreviousPage}
-                    <a href="{PreviousPage}">Previous</a>
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{PreviousPage}">Previous</a>
               {/block:PreviousPage}
         
               {block:JumpPagination length="5"}
@@ -539,7 +568,7 @@ font-size:10px;}
                     {/block:CurrentPage}
         
                     {block:JumpPage}
-                          <a class="jump_page" href="{URL}">{PageNumber}</a>
+                          <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} class="jump_page" href="{URL}">{PageNumber}</a>
                     {/block:JumpPage}
               {/block:JumpPagination}
         
@@ -547,12 +576,12 @@ font-size:10px;}
                     <a href="{NextPage}">Next</a>
               {/block:NextPage}
         </div>
-    {/block:Pagination}
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+{/block:Pagination}<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
 <script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript">
+
+    <script type="text/javascript">
 $(document).ready(function() {
 //http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
     var $container = $('#posts');
@@ -560,7 +589,7 @@ $(document).ready(function() {
     // Fire Isotope only when images are loaded
     $container.imagesLoaded(function(){
         $container.isotope({
-            itemSelector : '#entry',
+            itemSelector : '.entry, #fixed',
             masonry: {
             }
         });
@@ -570,8 +599,8 @@ $(document).ready(function() {
     $('#posts').infinitescroll({
         navSelector  : '#pagination', 
         nextSelector : '#pagination a', 
-        itemSelector : '#entry',
-        bufferPx     : 200,
+        itemSelector : '.entry',
+        bufferPx     : 800,
         loading: {
             finishedMsg: '',
         }
@@ -588,6 +617,7 @@ $(document).ready(function() {
  
 });
 </script>
+{/block:ifInfiniteScroll}
 {/block:indexpage}
 
 </div>

@@ -157,7 +157,7 @@ transition: all 0.3s ease-out; }
       padding-left: 10px;}
       
 .text p{text-align:left;}
-.txttitle{font-size:11px;}
+.txttitle{font-size:14px;}
 
 #entry {margin:16px;
 padding:9px;
@@ -295,6 +295,8 @@ div.bubble-answer > p {display: inline;}
     background-color:#fafafa;
     padding:10px;
     border:1px solid #eee;}
+.quote-title{font-size:14px;
+    line-height:16px;}
 {CustomCSS}
 
 </style>
@@ -419,11 +421,11 @@ div.bubble-answer > p {display: inline;}
 {/block:Photoset}
 
 {block:Quote}
-<span class="title">{Quote}</span><br />
-{block:Source}{Source}{/block:Source}
+<span class="quote-title">“{Quote}”</span><br />
+{block:Source}<span class="quote-source">— {Source}</span>{/block:Source}
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
-<div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+<div class="perm"><a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm2"><a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {/block:Quote}
 

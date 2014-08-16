@@ -297,6 +297,10 @@ div.bubble-answer > p {display: inline;}
     border:1px solid #eee;}
 .quote-title{font-size:14px;
     line-height:16px;}
+.quote_source_mdash,.quote_source{vertical-align:text-top;
+font-size:10px;}
+.quote_source{margin:0;
+padding:4px;}
 {CustomCSS}
 
 </style>
@@ -422,7 +426,17 @@ div.bubble-answer > p {display: inline;}
 
 {block:Quote}
 <span class="quote-title">“{Quote}”</span><br />
-{block:Source}<span class="quote-source">— {Source}</span>{/block:Source}
+{block:Source}<table class="quote_source_table">
+    <tbody>
+        <tr>
+            <td class="quote_source_mdash">
+             —&nbsp;
+            </td>
+            <td class="quote_source">{Source}</td>
+        </tr>
+    </tbody>
+</table>
+{/block:Source}
 {block:IndexPage}
 <div class="perm"><a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
 <div class="perm2"><a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{ReblogURL}" target="_blank">rblg</a></div>

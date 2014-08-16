@@ -47,6 +47,8 @@ http://rowrz.tumblr.com/themes
 <meta name="if:showcaptions" content="0"/>
 <meta name="if:HomeLink" content="1"/>
 <meta name="if:AskLink" content="1"/>
+<meta name="if:InfiniteScroll" content="0"/>
+<meta name="if:DescPagination" content="1"/>
 
 <meta name="text:descfontsize" content="15px"/>
 <meta name="text:navfontsize" content="12px"/>
@@ -300,6 +302,10 @@ font-size:10px;}
     .desc-pagination{text-align:center;
     margin-top:2px;}
     .prev-nav-button{display:inline;}
+    .post-bottom-pagination{width:250px;
+        text-align:center;
+        font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;
+        margin-bottom:4px;}
 {/block:ifnotInfiniteScroll}
 {CustomCSS}
 
@@ -351,8 +357,9 @@ font-size:10px;}
             <span id="inner"></span>
         </div>
     </div>
-    {block:ifnotInfiniteScroll}
-    {block:Pagination}
+{block:ifnotInfiniteScroll}
+    {block:ifDescPagination}
+        {block:Pagination}
         <div id="pagination" class="desc-pagination">
         
               {block:JumpPagination length="5"}
@@ -361,19 +368,21 @@ font-size:10px;}
                     {/block:CurrentPage}
         
                     {block:JumpPage}
-                          <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} class="jump_page" href="{URL}">{PageNumber}</a>
+                          <a class="jump_page" href="{URL}">{PageNumber}</a>
                     {/block:JumpPage}
               {/block:JumpPagination}
               <br/>
                 {block:PreviousPage}<span class="prev-nav-button">
-                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{PreviousPage}">Previous</a></span>
+                    <a href="{PreviousPage}">Previous | </a></span>
               {/block:PreviousPage}
               <span class="next-nav-button">
               {block:NextPage}
-                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{NextPage}">Next</a>
+                    <a href="{NextPage}">Next</a>
               {/block:NextPage}</span>
         </div>
-{/block:Pagination}{/block:ifnotInfiniteScroll}
+        {/block:Pagination}
+    {/block:ifDescPagination}
+{/block:ifnotInfiniteScroll}
 </div>
 
 
@@ -551,6 +560,32 @@ font-size:10px;}
 </div>
 
 {/block:Posts}
+{block:ifnotInfiniteScroll}
+    {block:ifnotDescPagination}
+        {block:Pagination}
+            <div id="pagination" class="post-bottom-pagination">
+            {block:PreviousPage}<span class="prev-nav-button">
+                        <a href="{PreviousPage}">Previous | </a></span>
+                  {/block:PreviousPage} 
+                  {block:JumpPagination length="5"}
+                        {block:CurrentPage}
+                              <span class="current_page">{PageNumber}</span>
+                        {/block:CurrentPage}
+            
+                        {block:JumpPage}
+                              <a class="jump_page" href="{URL}">{PageNumber}</a>
+                        {/block:JumpPage}
+                        
+                  {/block:JumpPagination}
+                  
+                  <span class="next-nav-button">
+                  {block:NextPage} 
+                        <a href="{NextPage}"> | Next</a>
+                  {/block:NextPage}</span>
+            </div>
+         {/block:Pagination}
+    {/block:ifnotDescPagination}
+{/block:ifnotInfiniteScroll}
 </div>
 </div> 
 </div>

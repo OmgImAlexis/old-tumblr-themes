@@ -370,16 +370,16 @@ font-size:10px;}
                         {/block:CurrentPage}
             
                         {block:JumpPage}
-                              <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} class="jump_page" href="{URL}">{PageNumber}</a>
+                              <a class="jump_page" href="{URL}">{PageNumber}</a>
                         {/block:JumpPage}
                   {/block:JumpPagination}
                   <br/>
                     {block:PreviousPage}<span class="prev-nav-button">
-                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{PreviousPage}">Previous | </a></span>
+                        <a href="{PreviousPage}">Previous | </a></span>
                   {/block:PreviousPage}
                   <span class="next-nav-button">
                   {block:NextPage}
-                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{NextPage}">Next</a>
+                        <a href="{NextPage}">Next</a>
                   {/block:NextPage}</span>
             </div>
             {/block:Pagination}
@@ -553,7 +553,7 @@ font-size:10px;}
 
 {block:PermalinkPage}
 
-{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}, {block:RebloggedFrom}Reblogged: {/block:RebloggedFrom}{block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags}, &middot; {block:Tags}<a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
+{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}, {block:RebloggedFrom}Reblogged: {/block:RebloggedFrom}{block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags}, &middot; {block:Tags}<a href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
 
 {/block:PermalinkPage}
 
@@ -567,7 +567,7 @@ font-size:10px;}
         {block:Pagination}
             <div id="pagination" class="post-bottom-pagination">
             {block:PreviousPage}<span class="prev-nav-button">
-                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{PreviousPage}">Previous | </a></span>
+                        <a href="{PreviousPage}">Previous | </a></span>
                   {/block:PreviousPage} 
                   {block:JumpPagination length="5"}
                         {block:CurrentPage}
@@ -575,14 +575,14 @@ font-size:10px;}
                         {/block:CurrentPage}
             
                         {block:JumpPage}
-                              <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} class="jump_page" href="{URL}">{PageNumber}</a>
+                              <a class="jump_page" href="{URL}">{PageNumber}</a>
                         {/block:JumpPage}
                         
                   {/block:JumpPagination}
                   
                   <span class="next-nav-button">
                   {block:NextPage} 
-                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{NextPage}"> | Next</a>
+                        <a href="{NextPage}"> | Next</a>
                   {/block:NextPage}</span>
             </div>
          {/block:Pagination}

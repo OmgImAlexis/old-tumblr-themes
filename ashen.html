@@ -73,19 +73,19 @@ http://rowrz.tumblr.com/themes
 <meta name="text:Body Font Size" content="10px"/>
 <meta name="text:img opacity" content=".8"/>
 
-<meta name="text:home link title" content="return"/>
-<meta name="text:msg link title" content="message"/>
+<meta name="text:homelinktitle" content="return"/>
+<meta name="text:msglinktitle" content="message"/>
 
-<meta name="text:link 1 title" content=""/>
-<meta name="text:link 1" content=""/>
-
-
-<meta name="text:link 2 title" content=""/>
-<meta name="text:link 2" content=""/>
+<meta name="text:link1title" content="link 1"/>
+<meta name="text:link1" content="#"/>
 
 
-<meta name="text:link 3 title" content=""/>
-<meta name="text:link 3" content=""/>
+<meta name="text:link2title" content="link 2"/>
+<meta name="text:link2" content="#"/>
+
+
+<meta name="text:link3title" content="link 2"/>
+<meta name="text:link3" content="#"/>
 
 
 
@@ -1007,10 +1007,10 @@ color:{color:Text};
 {block:ifTextLinks}
 <div class="altnav">
     <a href="/" title="{text:home link title}">{text:home link title}</a> //
-    <a href="/ask" title="{text:msg link title}">{text:msg link title}</a> {block:iflink1} //
-    <a href="{text:link 1}" title="{text:link 1 title}">{text:link 1 title}</a>{/block:iflink1}{block:iflink2} //
-    <a href="{text:link 2}" title="{text:link 2 title}">{text:link 2 title}</a>{/block:iflink2}{block:iflink3} //
-    <a href="{text:link 3 }" title="{text:link 3 title}">{text:link 3 title}</a> {/block:iflink3} //
+    <a href="/ask" title="{text:msg link title}">{text:msg link title}</a> {block:iflink1title} //
+    <a href="{text:link 1}" title="{text:link 1 title}">{text:link 1 title}</a>{/block:iflink1title}{block:iflink2title} //
+    <a href="{text:link 2}" title="{text:link 2 title}">{text:link 2 title}</a>{/block:iflink2title}{block:iflink3title} //
+    <a href="{text:link 3 }" title="{text:link 3 title}">{text:link 3 title}</a> {/block:iflink3title} //
     <span id="inner"></span>
 </div>
 {/block:ifTextLinks}

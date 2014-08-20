@@ -35,16 +35,16 @@ http://rowrz.tumblr.com/themes
 <meta name="color:Background" content="#252525"/>
 <meta name="color:Text" content="#000000"/>
 <meta name="color:Link" content="#000000"/>
-<meta name="color:accents" content="#eeeeee"/>
-<meta name="color:linkhover" content="#888888"/>
-<meta name="color:entrybg" content="#FFFFFF"/> 
-<meta name="color:borders" content="#000000"/>
+<meta name="color:Accents" content="#eeeeee"/>
+<meta name="color:LinkHover" content="#888888"/>
+<meta name="color:EntryBG" content="#FFFFFF"/> 
+<meta name="color:Borders" content="#000000"/>
 <meta name="color:Pagination" content="#FFFFFF"/>
 
 <meta name="if:UseAccountAvi" content="1"/>
 <meta name="if:Borders" content="0"/>
 <meta name="image:SideImg" content="{PortraitURL-128}"/>
-<meta name="if:showcaptions" content="0"/>
+<meta name="if:ShowCaptions" content="0"/>
 <meta name="if:HomeLink" content="1"/>
 <meta name="if:AskLink" content="1"/>
 <meta name="if:InfiniteScroll" content="0"/>
@@ -102,7 +102,7 @@ color:{color:link};
 transition: all 0.3s ease-out;}
 
 a:hover{text-decoration:none;
-color:{color:linkhover};
+color:{color:LinkHover};
 text-shadow:0px 0px 20px #fff;
 -webkit-transition: all 0.3s ease-out;
 -moz-transition: all 0.3s ease-out;
@@ -150,7 +150,7 @@ line-height:14px;
 font-size:9px;
 background-color: {color:Background};}
 
-#entry blockquote {border-left: solid 2px {color:accents};
+#entry blockquote {border-left: solid 2px {color:Accents};
       margin: 0;
       padding-left: 10px;}
       
@@ -166,7 +166,7 @@ line-height:15px;
 {block:PermalinkPage}width:400px; margin-left:40px;{/block:PermalinkPage}
 font-family:'trebuchet ms', arial, sans-serif;
 {block:ifBorders}
-border:1px solid {color:borders};
+border:1px solid {color:Borders};
 {block:ifBorders}
 background-color:{color:entrybg};}
 
@@ -222,6 +222,12 @@ transition: all 1s ease;
 -o-transition: all 1s ease; 
 float:right;}
 
+{block:ifShowCaptions}
+.perma{
+    padding-bottom:2px;
+}
+{/block:ifShowCaptions}
+
 .sidebar{margin-top:125px;
 left:200px;
 position:fixed;
@@ -239,7 +245,7 @@ font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;}
 padding:14px;
 width:100px;
 {block:ifBorders}
-    border:1px solid {color:borders};
+    border:1px solid {color:Borders};
 {block:ifBorders}}
 
 .avatar {display:none;}
@@ -416,9 +422,10 @@ font-size:10px;}
 {block:IndexPage}
 <div class="photo">
 <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+<div class="perma">
 <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-<div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+<div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
 </div>
 {/block:IndexPage}
 {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
@@ -428,9 +435,10 @@ font-size:10px;}
 {block:IndexPage}
 <div class="photo">
     {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}" width="200"/>{LinkCloseTag}
-    {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
-    <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-<div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+    {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+<div class="perma">
+<div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+<div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
 </div>
 {/block:IndexPage}
     {block:PermalinkPage}
@@ -447,9 +455,10 @@ font-size:10px;}
     {/block:Photos}
     </div>
 </center></span>
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+<div class="perma">
 <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-<div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+<div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
 </div>
 {/block:IndexPage}
 {block:PermalinkPage}
@@ -505,7 +514,7 @@ font-size:10px;}
 {block:Artist}Artist: {Artist}</br>{/block:Artist}</div>
 
 {block:IndexPage}
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
@@ -515,7 +524,7 @@ font-size:10px;}
 {block:IndexPage}
 <div class="post video">{Video-250}</div>
 
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div style="padding-top:5px"></div>
 <div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
 

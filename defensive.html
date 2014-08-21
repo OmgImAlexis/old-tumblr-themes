@@ -403,7 +403,7 @@ font-size:10px;}
 {block:Title}<span class="txttitle">{Title}</span>{/block:Title}
 <span class="entrytext">{Body}</span></a>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {/block:Text}
@@ -412,7 +412,7 @@ font-size:10px;}
 <a href="{URL}" class="title">{Name}</a>
 {block:Description}{Description}{/block:Description}
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {block:Link}
@@ -450,7 +450,7 @@ font-size:10px;}
 {block:Photoset}{block:IndexPage}
 <div class="photo"><center>
     <div class="1stphoto">
-    {block:Photos}<a rel="nofollow" href="{Permalink}">
+    {block:Photos}<a href="{Permalink}">
         <img alt="" src="{PhotoURL-500}"></a>
     {/block:Photos}
     </div>
@@ -480,7 +480,7 @@ font-size:10px;}
 </table>
 {/block:Source}
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {/block:Quote}
@@ -499,7 +499,7 @@ font-size:10px;}
 {/block:Lines}
 </ul>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {/block:Chat}
@@ -515,7 +515,7 @@ font-size:10px;}
 
 {block:IndexPage}
 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {/block:Audio}
@@ -526,8 +526,7 @@ font-size:10px;}
 
 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div style="padding-top:5px"></div>
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
-
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {block:PermalinkPage}
@@ -552,7 +551,7 @@ font-size:10px;}
         {Replies}
     </div>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}"><a href="{Permalink}">{notecount}</span></a></div>
+<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
 {/block:IndexPage}
 {/block:Answer}

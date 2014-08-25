@@ -562,7 +562,7 @@ font-size:10px;}
 {block:PermalinkPage}
 
 {block:PostNotes}
-{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}, {block:RebloggedFrom}Via <a target="_blank" title="{ReblogParentTitle}" href="{ReblogParentURL}">{ReblogParentName}</a> {/block:RebloggedFrom}{block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags}, &middot; {block:Tags}<a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
+{block:Caption}{Caption}{/block:Caption}{block:NoteCount}<a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>{/block:NoteCount}, {block:RebloggedFrom}Via <a target="_blank" title="{ReblogParentTitle}" href="{ReblogParentURL}">{ReblogParentName}</a> {/block:RebloggedFrom}{block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags}, &middot; {block:Tags}<a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
 {/block:PostNotes}
 
 {/block:PermalinkPage}

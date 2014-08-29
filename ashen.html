@@ -1006,11 +1006,15 @@ color:{color:Text};
 {/block:ifnotTextLinks}
 {block:ifTextLinks}
 <div class="altnav">
-    <a href="/" title="{text:home link title}">{text:home link title}</a> //
-    <a href="/ask" title="{text:msg link title}">{text:msg link title}</a> {block:iflink1title} //
-    <a href="{text:link 1}" title="{text:link 1 title}">{text:link 1 title}</a>{/block:iflink1title}{block:iflink2title} //
-    <a href="{text:link 2}" title="{text:link 2 title}">{text:link 2 title}</a>{/block:iflink2title}{block:iflink3title} //
-    <a href="{text:link 3 }" title="{text:link 3 title}">{text:link 3 title}</a> {/block:iflink3title} //
+
+    {block:ifhomelinktitle}<a href="/" title="{text:homelinktitle}">{text:homelinktitle}</a> //{/block:ifhomelinktitle}
+     {block:AskEnabled}
+     {block:ifmsglinktitle}
+     <a href="/ask" title="{text:msglinktitle}">{text:msglinktitle}</a> //{/block:ifmsglinktitle}
+    {/block:AskEnabled}{block:iflink1title} 
+    <a href="{text:link1}" title="{text:link1title}">{text:link1title}</a> //{/block:iflink1title}{block:iflink2title} 
+    <a href="{text:link2}" title="{text:link2title}">{text:link2title}</a> //{/block:iflink2title}{block:iflink3title} 
+    <a href="{text:link3}" title="{text:link3title}">{text:link3title}</a> //{/block:iflink3title} 
     <span id="inner"></span>
 </div>
 {/block:ifTextLinks}

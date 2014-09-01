@@ -449,13 +449,8 @@ font-size:10px;}
 
 
 {block:Photoset}{block:IndexPage}
-<div class="photo"><center>
-    <div class="1stphoto">
-    {block:Photos}<a href="{Permalink}">
-        <img alt="" src="{PhotoURL-500}"></a>
-    {/block:Photos}
-    </div>
-</center></span>
+<div class="photo">
+{Photoset}
 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div class="perma">
 <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
@@ -656,9 +651,9 @@ font-size:10px;}
                 }
                 );
                 });
-            </script>
-        {/block:indexpage}
-    {/block:ifInfiniteScroll}
+        </script>
+    {/block:indexpage}
+{/block:ifInfiniteScroll}
 </div>
 
 {block:IfGoogleAnalyticsID}

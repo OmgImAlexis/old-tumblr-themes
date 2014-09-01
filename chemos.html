@@ -22,6 +22,9 @@ http://rowrz.tumblr.com/themes
             <meta name="description" content="{MetaDescription}" />
 {/block:Description}
 <link rel="shortcut icon" href="{Favicon}">
+<meta name="if:UseAccountAvi" content="1"/>
+<meta name="image:Background" content="1"/>
+<meta name="image:Sidebar" content="http://static.tumblr.com/264466c423a280025f87a11d077d6dfe/4ra4qv5/Ymgn2oz7p/tumblr_static_tumblr_n0fk3sgfhg1rj5baro1_1280.jpg"/>
 <meta name="font:posts" content="arial"/>
 <meta name="font:posttitle" content="arial"/>
 <meta name="color:blogtitle" content=""/>
@@ -39,8 +42,6 @@ http://rowrz.tumblr.com/themes
 <meta name="color:link3bg" content="#afafaf" />
 <meta name="color:link4bg" content="#989898" />
 <meta name="color:link5bg" content="#808080" />
-<meta name="image:Background" content="1"/>
-<meta name="image:sidebar" content="http://static.tumblr.com/264466c423a280025f87a11d077d6dfe/4ra4qv5/Ymgn2oz7p/tumblr_static_tumblr_n0fk3sgfhg1rj5baro1_1280.jpg"/>
 
 <meta name="text:home link title" content="return"/>
 
@@ -60,9 +61,6 @@ http://rowrz.tumblr.com/themes
 <meta name="text:link four title" content=""/>
 
 <meta name="if:showcaptions" content="1" />
-
-
-
 
 <script src="http://static.tumblr.com/ojd74qh/dIVn7c97d/jquery.1.11.0.min.chemos.js"></script>
 
@@ -401,10 +399,7 @@ transition: all 0.3s linear;
     font-family:'courier new';
     font-size:{text:descfontsize};
     letter-spacing:2px;
-    
-
 }
-
 .avatar {
     display:none;
 }
@@ -416,6 +411,9 @@ transition: all 0.3s linear;
 #entry blockquote {border-left: solid 2px {color:accents};
       margin: 0;
       padding-left: 10px;}
+.sideimg-circle img{border-radius: 50%;}
+.sideimg{display:block;
+    width:100%;}
 {block:IndexPage}    
    div.video iframe, div.video embed{width:250px;}
 {/block:IndexPage} 
@@ -429,13 +427,13 @@ transition: all 0.3s linear;
 
 </head>
 
-<body onkeydown="return false">
+<body>
 
 
 
 <div class="blogtitle"><a class="titlelink" href="/">{title}</a></div>
 <div class="sideimgdesc">
-<a href="/"><img class="imgside" src="{image:sidebar}" width="190px" /></a>
+<a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}{block:ifnotUseAccountAvi}<img class="imgside" src="{image:sidebar}" width="100%"/>{/block:ifnotUseAccountAvi}</a>
 <br />
 <br />
 <div id="desc">

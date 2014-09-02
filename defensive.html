@@ -315,6 +315,7 @@ font-size:10px;}
         margin-bottom:10px;}
     #pagination,#pagination span,#pagination span > a,a.jump_page{color:{color:Pagination};}
 {/block:ifnotInfiniteScroll}
+.phtst{max-width:100%;}
 {CustomCSS}
 
 </style>
@@ -450,7 +451,7 @@ font-size:10px;}
 
 {block:Photoset}{block:IndexPage}
 <div class="photo">
-{Photoset}
+<div class="phtst">{Photoset}</div>
 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div class="perma">
 <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>

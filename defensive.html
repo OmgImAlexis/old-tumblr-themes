@@ -74,7 +74,63 @@ http://rowrz.tumblr.com/themes
 {/block:hidden}
 
 <script src="http://static.tumblr.com/4ra4qv5/rVgna8395/jquery.1.11.0.min.defensive.js"></script>
-
+{block:ifInfiniteScroll}
+    {block:indexpage}
+        {block:Pagination}
+                <div id="pagination" style="display:none;">
+                      {block:PreviousPage}
+                            <a href="{PreviousPage}">Previous</a>
+                      {/block:PreviousPage}
+                
+                      {block:JumpPagination length="5"}
+                            {block:CurrentPage}
+                                  <span class="current_page">{PageNumber}</span>
+                            {/block:CurrentPage}
+                
+                            {block:JumpPage}
+                                  <a class="jump_page" href="{URL}">{PageNumber}</a>
+                            {/block:JumpPage}
+                      {/block:JumpPagination}
+                
+                      {block:NextPage}
+                            <a href="{NextPage}">Next</a>
+                      {/block:NextPage}
+                </div>
+            {/block:Pagination}
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+            <script src="http://static.tumblr.com/4ra4qv5/aJonb7d7f/infinscrlll.defensive.rowrz-themes.js"></script>
+            <script src="http://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
+            <script>
+                $(function(){
+                    var $container = $('#posts');
+                    $container.imagesLoaded(function(){
+                        $container.masonry({
+                        itemSelector: '#entry',
+                    });
+                });
+                $container.infinitescroll({
+                    itemSelector : "#entry",
+                    navSelector  : '#pagination', 
+                    nextSelector : '#pagination a', 
+                    loadingImg : "",
+                    loadingText : "",
+                    bufferPx : 10000,
+                    extraScrollPx: 12000,
+                },
+                // trigger Masonry as a callback
+                function( newElements ) {
+                  var $newElems = $( newElements ).css({ opacity: 0 });
+                // ensure that images load before adding to masonry layout
+                $newElems.imagesLoaded(function(){
+                $newElems.animate({ opacity: 1 });
+                $container.masonry( 'appended', $newElems, true );
+                });
+                }
+                );
+                });
+        </script>
+    {/block:indexpage}
+{/block:ifInfiniteScroll}
 <style type="text/css">
 
 @font-face
@@ -451,7 +507,10 @@ font-size:10px;}
 
 {block:Photoset}{block:IndexPage}
 <div class="photo">
-<div class="phtst">{Photoset}</div>
+{block:Photos}
+        <img src="{PhotoURL-250}"
+            width="{PhotoWidth-250}"height="{PhotoHeight-250}" />
+    {/block:Photos}
 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div class="perma">
 <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
@@ -598,63 +657,8 @@ font-size:10px;}
 </div> 
 </div>
 </div>
-{block:ifInfiniteScroll}
-    {block:indexpage}
-        {block:Pagination}
-                <div id="pagination" style="display:none;">
-                      {block:PreviousPage}
-                            <a href="{PreviousPage}">Previous</a>
-                      {/block:PreviousPage}
-                
-                      {block:JumpPagination length="5"}
-                            {block:CurrentPage}
-                                  <span class="current_page">{PageNumber}</span>
-                            {/block:CurrentPage}
-                
-                            {block:JumpPage}
-                                  <a class="jump_page" href="{URL}">{PageNumber}</a>
-                            {/block:JumpPage}
-                      {/block:JumpPagination}
-                
-                      {block:NextPage}
-                            <a href="{NextPage}">Next</a>
-                      {/block:NextPage}
-                </div>
-            {/block:Pagination}
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-            <script src="http://static.tumblr.com/4ra4qv5/aJonb7d7f/infinscrlll.defensive.rowrz-themes.js"></script>
-            <script src="http://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
-            <script>
-                $(function(){
-                    var $container = $('#posts');
-                    $container.imagesLoaded(function(){
-                        $container.masonry({
-                        itemSelector: '#entry',
-                    });
-                });
-                $container.infinitescroll({
-                    itemSelector : "#entry",
-                    navSelector  : '#pagination', 
-                    nextSelector : '#pagination a', 
-                    loadingImg : "",
-                    loadingText : "",
-                    bufferPx : 10000,
-                    extraScrollPx: 12000,
-                },
-                // trigger Masonry as a callback
-                function( newElements ) {
-                  var $newElems = $( newElements ).css({ opacity: 0 });
-                // ensure that images load before adding to masonry layout
-                $newElems.imagesLoaded(function(){
-                $newElems.animate({ opacity: 1 });
-                $container.masonry( 'appended', $newElems, true );
-                });
-                }
-                );
-                });
-        </script>
-    {/block:indexpage}
-{/block:ifInfiniteScroll}
+
+
 </div>
 
 {block:IfGoogleAnalyticsID}

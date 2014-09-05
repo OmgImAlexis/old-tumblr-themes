@@ -633,8 +633,7 @@ font-size:10px;}
         {block:RebloggedFrom}
         Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
         {/block:RebloggedFrom}
-        {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}
-        {block:HasTags},&nbsp;tagged:&nbsp;
+        {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
             {block:Tags}
                 <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
             {/block:Tags}

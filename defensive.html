@@ -620,15 +620,29 @@ font-size:10px;}
 
 
 {block:PermalinkPage}
-
-{block:PostNotes}
-{block:Caption}{Caption}{/block:Caption}{block:NoteCount}<a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>{/block:NoteCount}, {block:RebloggedFrom}Via <a target="_blank" title="{ReblogParentTitle}" href="{ReblogParentURL}">{ReblogParentName}</a> {/block:RebloggedFrom}{block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags}, &middot; {block:Tags}<a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> {/block:Tags}{/block:hasTags}
-{/block:PostNotes}
-
+    {block:PostNotes}
+        {block:Caption}
+            {Caption}
+        {/block:Caption}
+        {block:NoteCount}
+            <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+        {/block:NoteCount}
+        {block:ContentSource}
+        Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+        {/block:ContentSource}
+        {block:RebloggedFrom}
+        Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
+        {/block:RebloggedFrom}
+        {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}
+        {block:HasTags},&nbsp;tagged:&nbsp;
+            {block:Tags}
+                <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
+            {/block:Tags}
+        {/block:hasTags}
+        {PostNotes}
+    {/block:PostNotes}
 {/block:PermalinkPage}
 
-{block:PostNotes}{PostNotes}
-{/block:PostNotes}
 </div>
 
 {/block:Posts}

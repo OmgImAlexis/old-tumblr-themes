@@ -373,6 +373,7 @@ font-size:10px;}
     #pagination,#pagination span,#pagination span > a,a.jump_page{color:{color:Pagination};}
 {/block:ifnotInfiniteScroll}
 .phtst{max-width:100%;}
+.post-notes{display:block;}
 {CustomCSS}
 
 </style>
@@ -620,26 +621,28 @@ font-size:10px;}
 
 
 {block:PermalinkPage}
-    {block:PostNotes}
-        {block:Caption}
-            {Caption}
-        {/block:Caption}
-        {block:NoteCount}
-            <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
-        {/block:NoteCount}
-        {block:ContentSource}
-        Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
-        {/block:ContentSource}
-        {block:RebloggedFrom}
-        Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
-        {/block:RebloggedFrom}
-        {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
-            {block:Tags}
-                <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
-            {/block:Tags}
-        {/block:hasTags}
-        {PostNotes}
-    {/block:PostNotes}
+    <div class="post-notes">
+        {block:PostNotes}
+            {block:Caption}
+                {Caption}
+            {/block:Caption}
+            {block:NoteCount}
+                <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+            {/block:NoteCount}
+            {block:ContentSource}
+            Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+            {/block:ContentSource}
+            {block:RebloggedFrom}
+            Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
+            {/block:RebloggedFrom}
+            {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
+                {block:Tags}
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
+                {/block:Tags}
+            {/block:hasTags}
+            {PostNotes}
+        {/block:PostNotes}
+    </div>
 {/block:PermalinkPage}
 
 </div>

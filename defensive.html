@@ -75,63 +75,68 @@ http://rowrz.tumblr.com/themes
 {/block:hidden}
 
 <script src="http://static.tumblr.com/4ra4qv5/rVgna8395/jquery.1.11.0.min.defensive.js"></script>
+{block:Indexpage}
+{block:ifnotInfiniteScroll}
+{block:if2Columns}
+<script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
+<script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
+<script type="text/javascript">
+$(window).load(function () {
+$('#posts').masonry({
+itemSelector : "#entry",
+},
+function() { $('#posts').masonry({ appendedContent: $(this) }); }
+);
+});
+</script>
+{/block:if2Columns}
+{/block:ifnotInfiniteScroll}
 {block:ifInfiniteScroll}
-    {block:indexpage}
-        {block:Pagination}
-                <div id="pagination" style="display:none;">
-                      {block:PreviousPage}
-                            <a href="{PreviousPage}">Previous</a>
-                      {/block:PreviousPage}
-                
-                      {block:JumpPagination length="5"}
-                            {block:CurrentPage}
-                                  <span class="current_page">{PageNumber}</span>
-                            {/block:CurrentPage}
-                
-                            {block:JumpPage}
-                                  <a class="jump_page" href="{URL}">{PageNumber}</a>
-                            {/block:JumpPage}
-                      {/block:JumpPagination}
-                
-                      {block:NextPage}
-                            <a href="{NextPage}">Next</a>
-                      {/block:NextPage}
-                </div>
-            {/block:Pagination}
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-            <script src="http://static.tumblr.com/4ra4qv5/aJonb7d7f/infinscrlll.defensive.rowrz-themes.js"></script>
-            <script src="http://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
-            <script>
-                $(function(){
-                    var $container = $('#posts');
-                    $container.imagesLoaded(function(){
-                        $container.masonry({
-                        itemSelector: '#entry',
-                    });
-                });
-                $container.infinitescroll({
-                    itemSelector : "#entry",
-                    navSelector  : '#pagination', 
-                    nextSelector : '#pagination a', 
-                    loadingImg : "",
-                    loadingText : "",
-                    bufferPx : 10000,
-                    extraScrollPx: 12000,
-                },
-                // trigger Masonry as a callback
-                function( newElements ) {
-                  var $newElems = $( newElements ).css({ opacity: 0 });
-                // ensure that images load before adding to masonry layout
-                $newElems.imagesLoaded(function(){
-                $newElems.animate({ opacity: 1 });
-                $container.masonry( 'appended', $newElems, true );
-                });
-                }
-                );
-                });
-        </script>
-    {/block:indexpage}
+            <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
+<script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+//http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
+    var $container = $('#posts');
+       
+    // Fire Isotope only when images are loaded
+    $container.imagesLoaded(function(){
+        $container.isotope({
+            itemSelector : '#entry',
+            masonry: {
+            }
+        });
+    });
+ 
+    // Infinite Scroll
+    $('#posts').infinitescroll({
+        navSelector  : '#pagination', 
+        nextSelector : '#pagination a', 
+        itemSelector : '#entry',
+        loadingImg : "",
+        loadingText : "",
+        bufferPx : 100,
+        extraScrollPx: 200,
+        loading: {
+            finishedMsg: '',
+        }
+    },
+ 
+    // Infinite Scroll Callback
+    function( newElements ) {
+        var $newElems = jQuery( newElements ).hide(); 
+        $newElems.imagesLoaded(function(){
+            $newElems.fadeIn();
+            $container.isotope( 'appended', $newElems );
+        });
+    });
+ 
+});
+</script>
 {/block:ifInfiniteScroll}
+{/block:Indexpage}
 <style type="text/css">
 
 @font-face
@@ -444,11 +449,11 @@ font-size:10px;}
                   {/block:JumpPagination}
                   <br/>
                     {block:PreviousPage}<span class="prev-nav-button">
-                        <a href="{PreviousPage}">Previous | </a></span>
+                        <a href="{PreviousPage}">&#8592; Previous | </a></span>
                   {/block:PreviousPage}
                   <span class="next-nav-button">
                   {block:NextPage}
-                        <a href="{NextPage}">Next</a>
+                        <a href="{NextPage}">Next &#8594;</a>
                   {/block:NextPage}</span>
             </div>
             {/block:Pagination}
@@ -653,7 +658,7 @@ font-size:10px;}
         {block:Pagination}
             <div id="pagination" class="post-bottom-pagination">
             {block:PreviousPage}<span class="prev-nav-button">
-                        <a href="{PreviousPage}">Previous | </a></span>
+                        <a href="{PreviousPage}">&#8592; Previous | </a></span>
                   {/block:PreviousPage} 
                   {block:JumpPagination length="5"}
                         {block:CurrentPage}
@@ -668,7 +673,7 @@ font-size:10px;}
                   
                   <span class="next-nav-button">
                   {block:NextPage} 
-                        <a href="{NextPage}"> | Next</a>
+                        <a href="{NextPage}"> | Next &#8594;</a>
                   {/block:NextPage}</span>
             </div>
          {/block:Pagination}

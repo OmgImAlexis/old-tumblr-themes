@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
                                
-defensive theme v1.6.8                              
+defensive theme v1.7.0                              
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -346,8 +346,7 @@ margin-right:10px;}
 
 .sideimg-circle img{border-radius: 50%;}
 .sideimg{display:block;
-    width:100%;
-    padding-bottom:2px;}
+    width:100%;}
 span.entrytext > p {margin-top: 1px;}
 .photo img{width:100%;}
 .index-page .1stphoto img {display: none;}
@@ -379,6 +378,13 @@ font-size:10px;}
 {/block:ifnotInfiniteScroll}
 .phtst{max-width:100%;}
 .post-notes{display:block;}
+.side-title{color:{TitleColor};
+    font-weight:{TitleFontWeight};
+    font-size:150%;
+    word-wrap:break-word;
+    padding-bottom:4px;
+    display:block;
+}
 {CustomCSS}
 
 </style>
@@ -395,6 +401,9 @@ font-size:10px;}
 
 <div class="sidebar">
     <div class="sideguts">
+        {block:ShowTitle}
+            <div class="side-title">{Title}</div>
+        {/block:ShowTitle}
         <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}
             {block:ifnotUseAccountAvi}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvi}
         </a>

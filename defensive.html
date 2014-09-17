@@ -29,9 +29,8 @@ http://rowrz.tumblr.com/themes
 <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{Title} | {Name}</title>
 <link rel="shortcut icon" href="{favicon}">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
-{block:hidden}
-<meta name="if:Sliding header" content="1">    
 <meta name="viewport" content="width=720" />
+{block:hidden}
 <meta name="color:Background" content="#252525"/>
 <meta name="color:Text" content="#000000"/>
 <meta name="color:Link" content="#000000"/>
@@ -54,19 +53,14 @@ http://rowrz.tumblr.com/themes
 <meta name="if:DescriptionUnderline" content="1"/>
 
 <meta name="text:sidefontsize" content="9px"/>
-
 <meta name="text:link1" content=""/>
 <meta name="text:link1title" content=""/>
-
 <meta name="text:link2" content=""/>
 <meta name="text:link2title" content=""/>
-
 <meta name="text:link3" content=""/>
 <meta name="text:link3title" content=""/>
-
 <meta name="text:link4" content=""/>
 <meta name="text:link4title" content=""/>
-
 <meta name="text:link5" content=""/>
 <meta name="text:link5title" content=""/>
 
@@ -378,18 +372,18 @@ font-size:10px;}
 #infscr-loading{display:none;}
 .phtst{max-width:100%;}
 .post-notes{display:block;}
-{CustomCSS}
 .side-title{color:{TitleColor};
     font-weight:{TitleFontWeight};
     font-size:150%;
     word-wrap:break-word;
     padding-bottom:4px;
     display:block;}
+{CustomCSS}
 </style>
 
 </head>
 
-<body {block:IndexPage}class="index-page"{/block:IndexPage}>
+<body class="{block:IndexPage}index-page{/block:IndexPage}">
 
 <div class="center">
 
@@ -405,18 +399,21 @@ font-size:10px;}
         <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}
             {block:ifnotUseAccountAvi}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvi}
         </a>
-        <span class="desc">
-            {Description}
-        </span>
-        <br/>
-        <hr/>
+        {block:ShowDescription}
+            <span class="desc">
+                {Description}
+                {block:ifDescriptionUnderline}
+                    <hr/>
+                {/block:ifDescriptionUnderline}
+            </span>
+        {/block:ShowDescription}
         <div id="nav">
             {block:ifHomeLink}
                 <a class="nav" href="/">home</a>
             {/block:ifHomeLink}
             {block:AskEnabled}
                 {block:ifAskLink}
-                    <a class="nav" href="/faq">msg</a>
+                    <a class="nav" href="/ask">msg</a>
                 {/block:ifAskLink}
             {/block:AskEnabled}
             {block:iflink1title}
@@ -522,8 +519,8 @@ font-size:10px;}
 {block:Photoset}{block:IndexPage}
 <div class="photo">
 {block:Photos}
-        <img src="{PhotoURL-500}"
-            width="{PhotoWidth-500}"height="{PhotoHeight-500}" />
+        <img src="{PhotoURL-250}"
+            width="{PhotoWidth-250}"height="{PhotoHeight-250}" />
     {/block:Photos}
 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
 <div class="perma">

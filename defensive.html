@@ -629,8 +629,8 @@ font-size:10px;}
 
 
 {block:PermalinkPage}
-    <div class="post-notes">
-        {block:PostNotes}
+    {block:NoteCount} 
+        <div class="post-notes">
             {block:Caption}
                 {Caption}
             {/block:Caption}
@@ -649,8 +649,8 @@ font-size:10px;}
                 {/block:Tags}
             {/block:hasTags}
             {PostNotes}
-        {/block:PostNotes}
-    </div>
+        </div>
+    {/block:NoteCount}
 {/block:PermalinkPage}
 </div>
 

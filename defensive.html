@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
                                
-defensive theme v1.7.1                               
+defensive theme v1.7.2                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -53,16 +53,7 @@ http://rowrz.tumblr.com/themes
 <meta name="if:DescriptionUnderline" content="1"/>
 
 <meta name="text:sidefontsize" content="9px"/>
-<meta name="text:link1" content=""/>
-<meta name="text:link1title" content=""/>
-<meta name="text:link2" content=""/>
-<meta name="text:link2title" content=""/>
-<meta name="text:link3" content=""/>
-<meta name="text:link3title" content=""/>
-<meta name="text:link4" content=""/>
-<meta name="text:link4title" content=""/>
-<meta name="text:link5" content=""/>
-<meta name="text:link5title" content=""/>
+<meta name="text:home" content="home" />
 
 <meta name="text:Google analytics ID" content="">
 {/block:hidden}
@@ -410,28 +401,18 @@ font-size:10px;}
         {/block:ShowDescription}
         <div id="nav">
             {block:ifHomeLink}
-                <a class="nav" href="/">home</a>
+                <a class="nav" href="/">{text:home}</a>
             {/block:ifHomeLink}
             {block:AskEnabled}
                 {block:ifAskLink}
-                    <a class="nav" href="/ask">msg</a>
+                    <a class="nav" href="/ask">{AskLabel}</a>
                 {/block:ifAskLink}
             {/block:AskEnabled}
-            {block:iflink1title}
-                <a class="nav" href="{text:link1}">{text:link1title}</a>
-            {/block:iflink1title}
-            {block:iflink2title}
-                <a class="nav" href="{text:link2}">{text:link2title}</a>
-            {/block:iflink2title}
-            {block:iflink3title}
-                <a class="nav" href="{text:link3}">{text:link3title}</a>
-            {/block:iflink3title}
-            {block:iflink4title}
-                <a class="nav" href="{text:link4}">{text:link4title}</a>
-            {/block:iflink4title}
-            {block:iflink5title}
-                <a class="nav" href="{text:link5}">{text:link5title}</a>
-            {/block:iflink5title}
+            {block:HasPages}
+                {block:Pages}
+                <a class="nav" href="{URL}" title="{Label}">{Label}</a>
+                {/block:Pages}
+            {/block:HasPages}
             <span id="inner"></span>
         </div>
     </div>
@@ -629,7 +610,7 @@ font-size:10px;}
 
 
 {block:PermalinkPage}
-    {block:PostNotes}
+    {block:PostNotes} 
         <div class="post-notes">
             {block:Caption}
                 {Caption}
@@ -645,12 +626,12 @@ font-size:10px;}
             {/block:RebloggedFrom}
             {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
                 {block:Tags}
-                    <a href="{TagURL}"> #{Tag}</a> 
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
                 {/block:Tags}
             {/block:hasTags}
             {PostNotes}
         </div>
-    {/block:PostNotes}
+    {/block:PostNotes} 
 {/block:PermalinkPage}
 </div>
 

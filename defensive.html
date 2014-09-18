@@ -54,6 +54,16 @@ http://rowrz.tumblr.com/themes
 
 <meta name="text:sidefontsize" content="9px"/>
 <meta name="text:home" content="home" />
+<meta name="text:Link1" content=""/>
+<meta name="text:Link1Title" content=""/>
+<meta name="text:Link2" content=""/>
+<meta name="text:Link2Title" content=""/>
+<meta name="text:Link3" content=""/>
+<meta name="text:Link3Title" content=""/>
+<meta name="text:Link4" content=""/>
+<meta name="text:Link4Title" content=""/>
+<meta name="text:Link5" content=""/>
+<meta name="text:Link5Title" content=""/>
 
 <meta name="text:Google analytics ID" content="">
 {/block:hidden}
@@ -408,6 +418,21 @@ font-size:10px;}
                     <a class="nav" href="/ask">{AskLabel}</a>
                 {/block:ifAskLink}
             {/block:AskEnabled}
+            {block:iflink1title}
+                <a class="nav" href="{text:link1}">{text:link1title}</a>
+            {/block:iflink1title}
+            {block:iflink2title}
+                <a class="nav" href="{text:link2}">{text:link2title}</a>
+            {/block:iflink2title}
+            {block:iflink3title}
+                <a class="nav" href="{text:link3}">{text:link3title}</a>
+            {/block:iflink3title}
+            {block:iflink4title}
+                <a class="nav" href="{text:link4}">{text:link4title}</a>
+            {/block:iflink4title}
+            {block:iflink5title}
+                <a class="nav" href="{text:link5}">{text:link5title}</a>
+            {/block:iflink5title}
             {block:HasPages}
                 {block:Pages}
                 <a class="nav" href="{URL}" title="{Label}">{Label}</a>
@@ -571,17 +596,16 @@ font-size:10px;}
 {/block:Audio}
 
 {block:Video}
-{block:IndexPage}
-<div class="post video">{Video-250}</div>
-
-{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-<div style="padding-top:5px"></div>
-<div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-<div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-{/block:IndexPage}
-{block:PermalinkPage}
-<div class="post video" style="margin-bottom:5px;">{Video-400}</div>
-{/block:PermalinkPage}
+    {block:IndexPage}
+      <div class="post video">{VideoEmbed-250}</div>
+      {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+      <div style="padding-top:5px"></div>
+      <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+      <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+    {/block:IndexPage}
+  {block:PermalinkPage}
+    <div class="post video" style="margin-bottom:5px;">{VideoEmbed-400}</div>
+  {/block:PermalinkPage}
 {/block:Video}
 
 

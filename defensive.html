@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
                                
-defensive theme v1.7.6                               
+defensive theme v1.7.7                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -51,6 +51,7 @@ http://rowrz.tumblr.com/themes
 <meta name="if:DescPagination" content="1"/>
 <meta name="if:2Columns" content="1"/>
 <meta name="if:DescriptionUnderline" content="1"/>
+<meta name="if:ShowTitleOnBlog" content="1"/>
 
 <meta name="text:sidefontsize" content="9px"/>
 <meta name="text:home" content="home" />
@@ -75,11 +76,11 @@ http://rowrz.tumblr.com/themes
 <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
 <script type="text/javascript">
 $(window).load(function () {
-$('#posts').masonry({
-itemSelector : "#entry",
-},
-function() { $('#posts').masonry({ appendedContent: $(this) }); }
-);
+    $('#posts').masonry({
+        itemSelector : "#entry",
+    },
+        function() { $('#posts').masonry({ appendedContent: $(this) }); }
+    );
 });
 </script>
 {/block:if2Columns}
@@ -145,11 +146,12 @@ src: url(http://static.tumblr.com/ojd74qh/noSn5fmf6/slkscr.ttf);}
  
 -o-transition: all 0.4s ease-in-out;
 
+*{word-wrap:break-word !important;}
+
 a {text-decoration:none;
 -webkit-transition: all 0.3s ease-out;
 -moz-transition: all 0.3s ease-out;
 transition: all 0.3s ease-out;}
-a{word-wrap: break-word;}
 
 a:link, a:active, a:visited{text-decoration:none;
 color:{color:link};
@@ -376,11 +378,9 @@ font-size:10px;}
 .side-title{color:{TitleColor};
     font-weight:{TitleFontWeight};
     font-size:150%;
-    word-wrap:break-word;
     margin-bottom:8px;
     margin-top:-5px;
     display:block;}
-*{word-wrap:break-word;}
 {CustomCSS}
 </style>
 
@@ -396,9 +396,11 @@ font-size:10px;}
 
 <div class="sidebar">
     <div class="sideguts">
-        {block:ShowTitle}
-            <div class="side-title">{Title}</div>
-        {/block:ShowTitle}
+        {block:IfShowTitleOnBlog}
+            {block:ShowTitle}
+                <div class="side-title">{Title}</div>
+            {/block:ShowTitle}
+        {/block:IfShowTitleOnBlog}
         <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}
             {block:ifnotUseAccountAvi}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvi}
         </a>

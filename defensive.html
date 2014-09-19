@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
                                
-defensive theme v1.7.4                               
+defensive theme v1.7.5                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -634,29 +634,28 @@ font-size:10px;}
 
 
 {block:PermalinkPage}
-    {block:PostNotes} 
-        <div class="post-notes">
-            {block:Caption}
-                {Caption}
-            {/block:Caption}
-            {block:NoteCount}
-                <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
-            {/block:NoteCount}
-            {block:ContentSource}
-            Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
-            {/block:ContentSource}
-            {block:RebloggedFrom}
+    <div class="post-notes">
+        {block:Caption}
+            {Caption}
+        {/block:Caption}
+        {block:NoteCount}
+            <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+        {/block:NoteCount}
+        {block:ContentSource}
+        Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+        {/block:ContentSource}
+        {block:RebloggedFrom}
             Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
-            {/block:RebloggedFrom}
-            {block:NotReblog}Posted: {/block:NotReblog}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
+        {/block:RebloggedFrom}{block:NoteCount}
+        {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
                 {block:Tags}
                     <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
                 {/block:Tags}
             {/block:hasTags}
             {PostNotes}
-        </div>
-    {/block:PostNotes} 
+    </div>
 {/block:PermalinkPage}
+
 </div>
 
 {/block:Posts}{block:ifnotInfiniteScroll}

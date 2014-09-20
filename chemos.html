@@ -162,7 +162,7 @@ line-height:15px;
 {block:PermalinkPage}width:400px; margin-left:40px;{/block:PermalinkPage}
 border:solid 6px {color:entrybg};
 }
-{block:ifnotshowcaptions}
+{block:ifnotShowCaptions}
 #entry .perma{
 position:absolute;
 width: 260px;
@@ -184,17 +184,10 @@ transition: all 0.8s ease;
 }
 
 #entry:hover .perma{
-position:absolute;
+overflow:visible;
 width: 260px;
-height: auto;
-overflow:hidden;
-bottom:0px;
-font-family: consolas;
-font-size: 12px;
-line-height:14px;
-text-align: center;
-padding:0px;
-text-transform: uppercase;
+
+opacity: 0.9;
 }
 
 #entry:hover .perma:hover{
@@ -202,11 +195,22 @@ padding-left:15px;
 width:245px;
 opacity:1;
 }
-{/block:ifnotshowcaptions}
+{/block:ifnotShowCaptions}
+{block:ifshowcaptions}
 #entry .perma{
-    position:abs;
+width: 260px;
+height: auto;
+overflow:hidden;
+bottom:0px;
+font-family: consolas;
+font-size: 9px;
+line-height:14px;
+text-align:right;
+text-transform: uppercase;
+background-color:{color:accents}; 
+border-right:3px {color:accents} solid;
 }
-
+{/block:ifshowcaptions}
 .perm{
 display: block; 
 font-family:consolas;
@@ -522,23 +526,20 @@ transition: all 0.3s linear;
 {block:Link}
 
 {block:Photo}
-{block:IndexPage}
-<div class="perma"><a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; <a href="{Permalink}" target="_blank">{NoteCountWithLabel}</a></div>
-
-{/block:IndexPage}
 {block:IndexPage}{LinkOpenTag}<div class="photo"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="260"/></div>{LinkCloseTag}
 {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+<div class="perma"><a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; <a href="{Permalink}" target="_blank">{NoteCountWithLabel}</a></div>
 {/block:IndexPage}
 {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
 {/block:Photo}
 
 {block:Panorama}
-{block:IndexPage}
-<div class="perma"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-{/block:IndexPage}
+
+
 {block:IndexPage}
     {LinkOpenTag}<div class="photo"><img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}" width="260"/></div>{LinkCloseTag}
     {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+    <div class="perma"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
     {/block:IndexPage}
     {block:PermalinkPage}
     {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
@@ -548,11 +549,11 @@ transition: all 0.3s linear;
 
 {block:Photoset}
 {block:IndexPage}
+<center>{Photoset}</center>
+{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 <div class="perma">
 <a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; 
 <a href="{Permalink}">{NoteCountWithLabel}</a></div>
-<center>{Photoset}</center>
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 {/block:IndexPage}
 {block:PermalinkPage}
 {Photoset}
@@ -629,13 +630,27 @@ transition: all 0.3s linear;
 {/block:Video}
 
 {block:PermalinkPage}
-
-{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}{block:HasTags} &middot; {block:Tags}<a href="TagURL"> #{Tag}</a> {/block:Tags}{/block:hasTags}
-
+    <div class="post-notes">
+        {block:Caption}
+            {Caption}
+        {/block:Caption}
+        {block:NoteCount}
+            <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+        {/block:NoteCount}
+        {block:ContentSource}
+        Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+        {/block:ContentSource}
+        {block:RebloggedFrom}
+            Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
+        {/block:RebloggedFrom}{block:NoteCount}
+        {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
+                {block:Tags}
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
+                {/block:Tags}
+            {/block:hasTags}
+            {PostNotes}
+    </div>
 {/block:PermalinkPage}
-
-{block:PostNotes}{PostNotes}
-{/block:PostNotes}
 </div>
 
 {/block:Posts}

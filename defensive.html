@@ -70,66 +70,69 @@ http://rowrz.tumblr.com/themes
 {/block:hidden}
 <script src="http://static.tumblr.com/4ra4qv5/rVgna8395/jquery.1.11.0.min.defensive.js"></script>
 {block:Indexpage}
-{block:ifnotInfiniteScroll}
-{block:if2Columns}
-<script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
-<script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
-<script type="text/javascript">
-$(window).load(function () {
-    $('#posts').masonry({
-        itemSelector : "#entry",
-    },
-        function() { $('#posts').masonry({ appendedContent: $(this) }); }
-    );
-});
-</script>
-{/block:if2Columns}
-{/block:ifnotInfiniteScroll}
-{block:ifInfiniteScroll}
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
-<script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-//http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
-    var $container = $('#posts');
-       
-    // Fire Isotope only when images are loaded
-    $container.imagesLoaded(function(){
-        $container.isotope({
-            itemSelector : '#entry',
-            masonry: {
-            }
+    {block:if2Columns}
+        <script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
+        <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
+        <script type="text/javascript">
+        $(window).load(function () {
+            $('#posts').masonry({
+                itemSelector: "#entry",
+            },
+                function() {
+                    $('#posts').masonry( { 
+                        appendedContent: $(this) 
+                        
+                    });
+                }
+            );
         });
-    });
- 
-    // Infinite Scroll
-    $('#posts').infinitescroll({
-        navSelector  : '#pagination', 
-        nextSelector : '#pagination a', 
-        itemSelector : '#entry',
-        loadingImg : "",
-        loadingText : "",
-        bufferPx : 100,
-        extraScrollPx: 200,
-        loading: {
-            finishedMsg: '',
-        }
-    },
- 
-    // Infinite Scroll Callback
-    function( newElements ) {
-        var $newElems = jQuery( newElements ).hide(); 
-        $newElems.imagesLoaded(function(){
-            $newElems.fadeIn();
-            $container.isotope( 'appended', $newElems );
+        </script>
+    {/block:if2Columns}
+    {block:ifInfiniteScroll}
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
+        <script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+        //http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
+            var $container = $('#posts');
+               
+            // Fire Isotope only when images are loaded
+            $container.imagesLoaded(function(){
+                $container.isotope({
+                    itemSelector : '#entry',
+                    masonry: {
+                    }
+                });
+            });
+         
+            // Infinite Scroll
+            $('#posts').infinitescroll({
+                navSelector  : '#pagination', 
+                nextSelector : '#pagination a', 
+                itemSelector : '#entry',
+                loadingImg : "",
+                loadingText : "",
+                bufferPx : 100,
+                extraScrollPx: 200,
+                loading: {
+                    finishedMsg: '',
+                }
+            },
+         
+            // Infinite Scroll Callback
+            function( newElements ) {
+                var $newElems = jQuery( newElements ).hide(); 
+                $newElems.imagesLoaded(function(){
+                    $newElems.fadeIn();
+                    $container.isotope( 'appended', $newElems );
+                });
+            });
+         
         });
-    });
- 
-});
-</script>
-{/block:ifInfiniteScroll}
+        </script>
+    {/block:ifInfiniteScroll}
 {/block:Indexpage}
 <style type="text/css">
 
@@ -367,7 +370,9 @@ font-size:10px;}
     .post-bottom-pagination{width:250px;
         text-align:center;
         font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;
-        margin-bottom:10px;}
+        margin-bottom:10px;
+        position:absolute;
+        bottom:0;}
     #pagination,#pagination span,#pagination span > a,a.jump_page{color:{color:Pagination};}
 {/block:ifnotInfiniteScroll}
 #infscr-loading{display:none;}

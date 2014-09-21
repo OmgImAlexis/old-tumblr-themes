@@ -611,30 +611,31 @@ font-size:{text:FontSize};}
     
     {block:Audio}
       {block:AudioPlayer} 
-        <div id="audioplayer">
-            {AudioPlayer}
-        </div>
-        <div id="albumart">
-            {block:AlbumArt}
-                <img src="{AlbumArtURL}" width="90px">
-            {/block:AlbumArt}
-        </div>
-        <div id="audiod">
-            {PlayCount} plays</br>
-            {block:TrackName}Title: {TrackName}</br>{/block:TrackName}
-            {block:Artist}Artist: {Artist}</br>{/block:Artist}
-        </div>
-    {/block:AudioPlayer}
-    {block:IndexPage}
-        {block:AudioEmbed}
-            <div class="audio-embed">{AudioEmbed-250}</div>
-        {/block:AudioEmbed}
-        {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-    <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-    <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-    {/block:IndexPage}
-    {block:PermalinkPage}
-        <div class="audio-embed-perma">{AudioEmbed-400}</div>
+          <div id="audioplayer">
+              {AudioPlayer}
+          </div>
+          <div id="albumart">
+              {block:AlbumArt}
+                  <img src="{AlbumArtURL}" width="90px">
+              {/block:AlbumArt}
+          </div>
+          <div id="audiod">
+              {PlayCount} plays</br>
+              {block:TrackName}Title: {TrackName}</br>{/block:TrackName}
+              {block:Artist}Artist: {Artist}</br>{/block:Artist}
+          </div>
+      {/block:AudioPlayer}
+      {block:IndexPage}
+          {block:AudioEmbed}
+              <div class="audio-embed">{AudioEmbed-250}</div>
+          {/block:AudioEmbed}
+          {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+          <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+          <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+      {/block:IndexPage}
+      {block:PermalinkPage}
+          <div class="audio-embed-perma">{AudioEmbed-400}</div>
+      {/block:PermalinkPage}
     {/block:Audio}
     
     {block:Video}

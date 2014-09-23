@@ -41,7 +41,8 @@ http://rowrz.tumblr.com/themes
 <meta name="color:Pagination" content="#FFFFFF"/>
 <meta name="color:Answers" content="#fafafa">
 
-<meta name="if:UseAccountAvi" content="1"/>
+<meta name="if:UseAccountAvatarOnBlog" content="1"/>
+<meta name="if:ShowTitleOnBlog" content="1"/>
 <meta name="if:Borders" content="0"/>
 <meta name="image:SideImg" content="{PortraitURL-128}"/>
 <meta name="if:ShowCaptions" content="0"/>
@@ -51,7 +52,6 @@ http://rowrz.tumblr.com/themes
 <meta name="if:DescPagination" content="1"/>
 <meta name="if:2Columns" content="1"/>
 <meta name="if:DescriptionUnderline" content="1"/>
-<meta name="if:ShowTitleOnBlog" content="1"/>
 <meta name="text:FontSize" content="10px"/>
 <meta name="text:SideFontSize" content="9px"/>
 <meta name="text:home" content="home" />
@@ -426,8 +426,8 @@ font-size:{text:FontSize};}
                 <div class="side-title">{Title}</div>
             {/block:ShowTitle}
         {/block:IfShowTitleOnBlog}
-        <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}
-            {block:ifnotUseAccountAvi}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvi}
+        <a href="/">{block:ifUseAccountAvatarOnBlog}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvatarOnBlog}
+            {block:ifnotUseAccountAvatarOnBlog}<img class="sideimg" src="{image:SideImg}"/>{/block:ifnotUseAccountAvatarOnBlog}
         </a>
         {block:ShowDescription}
             <span class="desc">

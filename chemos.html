@@ -12,8 +12,8 @@
  | |_| | | |  __/ | | | | |  __/\__ \
   \__|_| |_|\___|_| |_| |_|\___||___/
                     
-chemos theme v1.7
-                                    
+chemos theme v1.7.2
+please do not steal nor copy without written consent
 designed by andrew manufactured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -62,7 +62,7 @@ http://rowrz.tumblr.com/themes
 
 <meta name="if:showcaptions" content="1" />
 
-<script src="http://static.tumblr.com/ojd74qh/dIVn7c97d/jquery.1.11.0.min.chemos.js"></script>
+<script src="https://secure.static.tumblr.com/4ra4qv5/pVsncf5vx/jquery.1.11.0.min.chemos.js"></script>
 
 <style type="text/css">
 @font-face
@@ -147,8 +147,7 @@ color:{color:linkhover};
 text-shadow:0px 0px 20px #fff;
 -webkit-transition: all 0.3s ease-out;
 -moz-transition: all 0.3s ease-out;
-transition: all 0.3s ease-out; 
-}
+transition: all 0.3s ease-out; }
 
 #entry {
 margin:16px;
@@ -158,58 +157,59 @@ box-shadow:1px 1px 5px #ccc;
 background-color: {color:entrybg};
 font-size: 12px;
 line-height:15px;
-{block:IndexPage}width:260px;{/block:IndexPage}
-{block:PermalinkPage}width:400px; margin-left:40px;{/block:PermalinkPage}
-border:solid 6px {color:entrybg};
-}
+{block:IndexPage}
+    width:250px;
+{/block:IndexPage}
+{block:PermalinkPage}
+    width:400px; 
+    margin-left:40px;
+{/block:PermalinkPage}
+border:solid 6px {color:entrybg};}
+
 {block:ifnotShowCaptions}
-#entry .perma{
-position:absolute;
-width: 260px;
-height: auto;
-overflow:hidden;
-bottom:0px;
-font-family: consolas;
-font-size: 12px;
-line-height:14px;
-text-align: center;
-padding:0px;
-text-transform: uppercase;
-opacity:0.0;
-background-color: rgba(255,255,255,0.5);
--webkit-transition: all 0.8s ease;
--moz-transition: all 0.8s ease;
-transition: all 0.8s ease;
--o-transition: all 0.8s ease; 
-}
-
-#entry:hover .perma{
-overflow:visible;
-width: 260px;
-
-opacity: 0.9;
-}
-
-#entry:hover .perma:hover{
-padding-left:15px; 
-width:245px;
-opacity:1;
-}
+    #entry .perma{
+    position:absolute;
+    width: 250px;
+    height: auto;
+    overflow:hidden;
+    bottom:0px;
+    font-family: consolas,arial,verdana,helvetica;
+    font-size: 12px;
+    line-height:14px;
+    text-align: center;
+    padding:0px;
+    text-transform: uppercase;
+    opacity:0.0;
+    background-color: rgba(255,255,255,0.5);
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    -o-transition: all 0.8s ease; }
+    
+    #entry:hover .perma{
+    overflow:visible;
+    width: 260px;
+    opacity: 0.9;}
+    
+    #entry:hover .perma:hover{
+    padding-left:15px; 
+    width:245px;
+    opacity:1;}
 {/block:ifnotShowCaptions}
+
 {block:ifshowcaptions}
-#entry .perma{
-width: 260px;
-height: auto;
-overflow:hidden;
-bottom:0px;
-font-family: consolas;
-font-size: 9px;
-line-height:14px;
-text-align:right;
-text-transform: uppercase;
-background-color:{color:accents}; 
-border-right:3px {color:accents} solid;
-}
+    #entry .perma{
+    width: 260px;
+    height: auto;
+    overflow:hidden;
+    bottom:0px;
+    font-family: consolas,arial,verdana,helvetica;
+    font-size: 9px;
+    line-height:14px;
+    text-align:right;
+    text-transform: uppercase;
+    background-color:{color:accents}; 
+    border-right:3px {color:accents} solid;}
 {/block:ifshowcaptions}
 .perm{
 display: block; 
@@ -227,12 +227,9 @@ margin-bottom:5px;
 -webkit-transition: all 1s ease;
 -moz-transition: all 1s ease;
 transition: all 1s ease;
--o-transition: all 1s ease; 
-}
+-o-transition: all 1s ease; }
 
-.perm:hover{
-opacity:.6; 
-}
+.perm:hover{opacity:.6;}
 
 .blogtitle{
 font-size:70px; 
@@ -297,12 +294,9 @@ opacity:1;
 -moz-transition: all 0.8s linear;
 transition: all 0.8s linear; 
 }
-
 .imgside {
     padding-bottom:10px
-    width:90px;
-}
-
+    width:90px;}
 .titlelink:hover{
   text-shadow: 1px 0px #df8181, -1px 0px #54d2cb; 
 -webkit-transition: all 0.3s linear;
@@ -310,14 +304,9 @@ transition: all 0.8s linear;
 transition: all 0.3s linear;   
 }
 
-
-
 .text img, #entry img {
     height: auto;
-    max-width:100%;
-}
-
-
+    max-width:100%;}
 .nav0, .nav1, .nav2, .nav3, .nav3, .nav4, .nav5 {
     float:right;
     width:70px;
@@ -332,47 +321,25 @@ transition: all 0.3s linear;
     margin-right:-10px;*/
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
-    transition: all 0.3s linear;   
-
-}
-
-.nav0 {
-
-   background-color:{color:homebg}; 
-}
-.nav1 {
-   background-color:{color:link1bg}; 
-}
-.nav2 {
-   background-color:{color:link2bg}; 
-}
-.nav3{
-   background-color:{color:link3bg};  
-}
-
-.nav4 {
-   background-color:{color:link4bg};  
-}
-.nav5 {
-   background-color:{color:link5bg};  
-}
-
+    transition: all 0.3s linear;}
+.nav0{background-color:{color:homebg};}
+.nav1{background-color:{color:link1bg};}
+.nav2{background-color:{color:link2bg};}
+.nav3{background-color:{color:link3bg};}
+.nav4{background-color:{color:link4bg};}
+.nav5{background-color:{color:link5bg};}
 .nav0:hover {
     width:84px;
     color:white;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
-    transition: all 0.3s linear;   
-
-}
+    transition: all 0.3s linear;}
 .nav1:hover {
     width:82px;
     color:white;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
-    transition: all 0.3s linear;  
-
-}
+    transition: all 0.3s linear;}
 .nav2:hover {
     width:80px;
     color:white;
@@ -399,8 +366,7 @@ transition: all 0.3s linear;
     color:white;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
-    transition: all 0.3s linear;  
-}
+    transition: all 0.3s linear;}
 
 .sideimgdesc {
     position:fixed;
@@ -415,9 +381,7 @@ transition: all 0.3s linear;
     font-size:{text:descfontsize};
     letter-spacing:2px;
 }
-.avatar {
-    display:none;
-}
+.avatar {display:none;}
 .bubble-question{border-radius:5px;
     background-color:#fafafa;
     padding:10px;
@@ -432,6 +396,26 @@ transition: all 0.3s linear;
 {block:IndexPage}    
    div.video iframe, div.video embed{width:250px;}
 {/block:IndexPage} 
+div.navi{padding-top:250px;}
+.quote > blockquote {font-family: Georgia, Times, serif;}
+.quote > blockquote {
+    border-left:none !important;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 5px 0 0;
+    quotes: "\201C""\201D""\2018""\2019";
+    word-break: break-word;}
+.quote > blockquote:before {content: open-quote;}
+.quote > blockquote:after {content: close-quote;
+    margin-left: -0.25em;}
+.quote > blockquote p:first-child,
+.quote > blockquote p:empty + p,
+.quote > blockquote p:last-child,
+.quote > blockquote p.empty-last-child {display: inline;}
+.quote > blockquote p + p {margin: 0.5em 0;}
+.quote > blockquote p:empty {display: none;}
+.quote.quote-body > blockquote{font-size:140%}
+.audio-embed > iframe{width:250px;}
 {CustomCSS}
 </style>
 
@@ -448,55 +432,33 @@ transition: all 0.3s linear;
 
 <div class="blogtitle"><a class="titlelink" href="/">{title}</a></div>
 <div class="sideimgdesc">
-<a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}{block:ifnotUseAccountAvi}<img class="imgside" src="{image:sidebar}" width="100%"/>{/block:ifnotUseAccountAvi}</a>
-<br />
-<br />
-<div id="desc">
-{description}
-
-<br />
-
+    <a href="/">{block:ifUseAccountAvi}{block:ShowAvatar}<div class="sideimg sideimg-{AvatarShape}"><img src="{PortraitURL-128}" width="100%" /></div>{/block:ShowAvatar}{/block:ifUseAccountAvi}{block:ifnotUseAccountAvi}<img class="imgside" src="{image:sidebar}" width="100%"/>{/block:ifnotUseAccountAvi}</a>
+    <div id="desc">
+        {description}
+    </div>
 </div>
-</div>
-
-<div class="center">
 
 <div class="sidebar">
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<div class="nav0"><a href="/">{text:home link title}</a></div>
-{block:iflinkone}<br />
-<br />
-<div class="nav1"><a href="{text:link one}">{text:link one title}</a></div>{/block:iflinkone}
-{block:iflinktwo}<br />
-<br />
-<div class="nav2"><a href="{text:link two}">{text:link two title}</a></div>{/block:iflinktwo}
-{block:iflinkthree}
-<br />
-<br />
-<div class="nav3"><a href="{text:link three}">{text:link three title}</a></div>{/block:iflinkthree}
-{block:iflinkfour}
-<br />
-<br />
-<div class="nav4"><a href="{text:link four}">{text:link four title}</a></div>{/block:iflinkfour}
-<br />
-<br />
-<span class="inner"></span>
-</div>
+    <div class="navi">
+        <div class="nav0"><a href="/">{text:home link title}</a></div>
+        {block:iflinkone}<br />
+        <br />
+        <div class="nav1"><a href="{text:link one}">{text:link one title}</a></div>{/block:iflinkone}
+        {block:iflinktwo}<br />
+        <br />
+        <div class="nav2"><a href="{text:link two}">{text:link two title}</a></div>{/block:iflinktwo}
+        {block:iflinkthree}
+        <br />
+        <br />
+        <div class="nav3"><a href="{text:link three}">{text:link three title}</a></div>{/block:iflinkthree}
+        {block:iflinkfour}
+        <br />
+        <br />
+        <div class="nav4"><a href="{text:link four}">{text:link four title}</a></div>{/block:iflinkfour}
+        <br />
+        <br />
+        <span class="inner"></span>
+    </div>
 </div>
 
 <div class="content">
@@ -560,13 +522,26 @@ transition: all 0.3s linear;
 {/block:PermalinkPage}
 {/block:Photoset}
 
-{block:Quote}
-<span class="title">{Quote}</span><br />
-{block:Source}{Source}{/block:Source}
-{block:IndexPage}
-<br /><div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
-{/block:IndexPage}
-{/block:Quote}
+    {block:Quote}
+            <span class="quote quote-body">
+                <blockquote class="{Length}">{Quote}</blockquote>
+            </span>
+        {block:Source}
+        <table class="quote_source_table">
+            <tbody>
+                <tr>
+                    <td class="quote_source_mdash">
+                     —&nbsp;
+                    </td>
+                    <td class="quote_source">{Source}</td>
+                </tr>
+            </tbody>
+        </table>
+        {/block:Source}
+            {block:IndexPage}
+                <div class="perm"><a href="{Permalink}">{TimeAgo}</a> &nbsp;|&nbsp; <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+            {/block:IndexPage}
+    {/block:Quote}
 
 {block:Chat}
 {block:Title}<span class="title">{Title}</span>{/block:Title}
@@ -587,12 +562,22 @@ transition: all 0.3s linear;
 {/block:Chat}
 
 {block:Audio}
-<center><div style="width:200px; height:20px;"><div style="float:left">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
-{FormattedPlayCount} plays</small></div></div></center><br>
-{block:Caption}{Caption}{/block:Caption}
-{block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
-{/block:IndexPage}
+    {block:AudioPlayer}
+        <center><div style="width:200px; height:20px;"><div style="float:left">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
+        {FormattedPlayCount} plays</small></div></div></center><br>
+    {/block:AudioPlayer}
+    {block:IndexPage}
+        {block:AudioEmbed}
+                  <div class="audio-embed">{AudioEmbed-250}</div>
+        {/block:AudioEmbed}
+        {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+        <div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+    {/block:IndexPage}
+    {block:PermalinkPage}
+        {block:AudioEmbed}
+                  <div class="audio-embed-perma">{AudioEmbed-400}</div>
+        {/block:AudioEmbed}
+    {/block:PermalinkPage}
 {/block:Audio}
 
 {block:Answer}

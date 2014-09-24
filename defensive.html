@@ -12,7 +12,7 @@ _ __ _____      ___ __ ____
 | |_| | | |  __/ | | | | |  __/\__ \
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
-                               
+please do not steal nor copy without written consent                
 defensive theme v1.8.0                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
@@ -68,7 +68,7 @@ http://rowrz.tumblr.com/themes
 
 <meta name="text:Google analytics ID" content="">
 {/block:hidden}
-<script src="http://static.tumblr.com/4ra4qv5/rVgna8395/jquery.1.11.0.min.defensive.js"></script>
+<script src="https://secure.static.tumblr.com/4ra4qv5/x9Jncf5rz/jquery.1.11.0.min.defensive.js"></script>
 {block:Indexpage}
     {block:if2Columns}
         <script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
@@ -392,8 +392,7 @@ font-size:{text:FontSize};}
     margin: 0;
     padding: 0 5px 0 0;
     quotes: "\201C""\201D""\2018""\2019";
-    word-break: break-word;
-}
+    word-break: break-word;}
 .quote > blockquote:before {content: open-quote;}
 .quote > blockquote:after {content: close-quote;
     margin-left: -0.25em;}
@@ -561,9 +560,9 @@ font-size:{text:FontSize};}
     <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
     </div>
     {/block:IndexPage}
-    {block:PermalinkPage}
-    {Photoset}
-    {/block:PermalinkPage}
+        {block:PermalinkPage}
+            {Photoset}
+        {/block:PermalinkPage}
     {/block:Photoset}
     
     
@@ -590,22 +589,22 @@ font-size:{text:FontSize};}
     {/block:Quote}
     
     {block:Chat}
-    {block:Title}<span class="title">{Title}</span>{/block:Title}
-    <ul class="chat">
-    {block:Lines}
-    <li class="user_{UserNumber}">
-    {block:Label}
-    <span class="label">{Label}</span>
-    {/block:Label}
-    
-    {Line}
-    </li>
-    {/block:Lines}
-    </ul>
-    {block:IndexPage}
-    <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-    <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-    {/block:IndexPage}
+        {block:Title}<span class="title">{Title}</span>{/block:Title}
+        <ul class="chat">
+            {block:Lines}
+                <li class="user_{UserNumber}">
+                {block:Label}
+                <span class="label">{Label}</span>
+                {/block:Label}
+                
+                {Line}
+                </li>
+            {/block:Lines}
+        </ul>
+        {block:IndexPage}
+            <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+            <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+        {/block:IndexPage}
     {/block:Chat}
     
     {block:Audio}

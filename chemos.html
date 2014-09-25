@@ -12,7 +12,7 @@
  | |_| | | |  __/ | | | | |  __/\__ \
   \__|_| |_|\___|_| |_| |_|\___||___/
                     
-chemos theme v1.7.2
+chemos theme v1.7.3
 please do not steal nor copy without written consent
 designed by andrew manufactured by alex
 http://rowrz.tumblr.com/themes
@@ -76,6 +76,8 @@ src: url(http://static.tumblr.com/4ra4qv5/7yOn2otg5/fragmentcore.otf);
 -moz-transition: all 0.4s ease-in-out;
  
 -o-transition: all 0.4s ease-in-out;
+
+#tumblr_controls{position:fixed !important;right:104px;}
 
 a {
 text-decoration:none;
@@ -465,16 +467,16 @@ div.navi{padding-top:250px;}
 
 <div class="left">
 
-<div id="posts" class="{block:TagPage}tag_page {/block:TagPage}{block:PermalinkPage}perma_page{/block:PermalinkPage} posts">
+<div id="posts">
 
 {block:Posts}
-<div id="entry" class="{block:IndexPage}{TagsAsClasses}{block:IndexPage} entry">
+<div id="entry">
 <div class="text">
 {block:Text}
 {block:Title}<span class="title">{Title}</span>{/block:Title}
 <span class="entrytext">{Body}</span></a>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> &nbsp;|&nbsp; <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> &nbsp;|&nbsp; <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {/block:Text}
 </div>
@@ -557,7 +559,7 @@ div.navi{padding-top:250px;}
 {/block:Lines}
 </ul>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {/block:Chat}
 
@@ -571,7 +573,7 @@ div.navi{padding-top:250px;}
                   <div class="audio-embed">{AudioEmbed-250}</div>
         {/block:AudioEmbed}
         {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-        <div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+        <div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
     {/block:IndexPage}
     {block:PermalinkPage}
         {block:AudioEmbed}
@@ -597,7 +599,7 @@ div.navi{padding-top:250px;}
         {Replies}
     </div>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {/block:Answer}
 
@@ -607,7 +609,7 @@ div.navi{padding-top:250px;}
 
 {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 <div style="padding-top:5px"></div>
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {block:PermalinkPage}
 <div class="post video">{Video-400}</div>
@@ -692,7 +694,5 @@ $(document).ready(function() {
 {/block:indexpage}
 
 </div>
-
-
 </body>
 </html>

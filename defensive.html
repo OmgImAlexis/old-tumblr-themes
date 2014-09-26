@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
 please do not steal nor copy without written consent                
-defensive theme v1.8.0                               
+defensive theme v1.8.1                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -548,18 +548,24 @@ font-size:{text:FontSize};}
     {/block:Panorama}
     
     
-    {block:Photoset}{block:IndexPage}
-    <div class="photo">
-    {block:Photos}
-            <img src="{PhotoURL-250}"
-                width="{PhotoWidth-250}"height="{PhotoHeight-250}" />
-        {/block:Photos}
-    {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-    <div class="perma">
-    <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-    <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
-    </div>
-    {/block:IndexPage}
+    {block:Photoset}
+        {block:IndexPage}
+            <div class="photo">
+                {block:ifInfiniteScroll}
+                    {block:Photos}
+                        <img src="{PhotoURL-500}"
+                            width="{PhotoWidth-500}"height="{PhotoHeight-500}" />
+                    {/block:Photos}
+                {/block:ifInfiniteScroll}
+                {block:ifnotInfiniteScroll}
+                    {Photoset}
+                {/block:ifnotInfiniteScroll}
+            {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+            <div class="perma phtst-perma" style="margin-top:5px;">
+                <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
+            </div>
+        {/block:IndexPage}
         {block:PermalinkPage}
             {Photoset}
         {/block:PermalinkPage}

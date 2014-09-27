@@ -12,7 +12,7 @@
  | |_| | | |  __/ | | | | |  __/\__ \
   \__|_| |_|\___|_| |_| |_|\___||___/
                     
-chemos theme v1.7.3
+chemos theme v1.7.4
 please do not steal nor copy without written consent
 designed by andrew manufactured by alex
 http://rowrz.tumblr.com/themes
@@ -62,7 +62,7 @@ http://rowrz.tumblr.com/themes
 
 <meta name="if:showcaptions" content="1" />
 
-<script src="https://secure.static.tumblr.com/4ra4qv5/JrZncfr0e/jquery.1.11.0.min.chemos.js"></script>
+<script src="https://secure.static.tumblr.com/4ra4qv5/lNuncfq6c/jquery.1.11.0.min.chemos.js"></script>
 
 <style type="text/css">
 @font-face
@@ -417,6 +417,31 @@ div.navi{padding-top:250px;}
 .quote > blockquote p:empty {display: none;}
 .quote.quote-body > blockquote{font-size:140%}
 .audio-embed > iframe{width:250px;}
+#audioplayer:hover {opacity:1;
+-webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;}
+
+#audioplayer {background:#fff;
+    width:30px;
+    height:30px;
+    border:30px solid transparent;
+    overflow:hidden;
+    position:absolute;
+    z-index:99;
+    opacity:0.3;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;}
+    
+#audiod {height:90px;
+    padding-top:5px;
+    padding-right:20px;
+    margin-left:95px;
+    overflow:auto;}
+    
+#albumart img {float:left;
+margin-right:10px;}
 {CustomCSS}
 </style>
 
@@ -563,23 +588,33 @@ div.navi{padding-top:250px;}
 {/block:Chat}
 
 {block:Audio}
-    {block:AudioPlayer}
-        <center><div style="width:200px; height:20px;"><div style="float:left">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
-        {FormattedPlayCount} plays</small></div></div></center><br>
-    {/block:AudioPlayer}
-    {block:IndexPage}
-        {block:AudioEmbed}
-                  <div class="audio-embed">{AudioEmbed-250}</div>
-        {/block:AudioEmbed}
-        {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-        <div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
-    {/block:IndexPage}
-    {block:PermalinkPage}
-        {block:AudioEmbed}
-                  <div class="audio-embed-perma">{AudioEmbed-400}</div>
-        {/block:AudioEmbed}
-    {/block:PermalinkPage}
-{/block:Audio}
+      {block:AudioPlayer} 
+          <div id="audioplayer">
+              {AudioPlayer}
+          </div>
+          <div id="albumart">
+              {block:AlbumArt}
+                  <img src="{AlbumArtURL}" width="90px">
+              {/block:AlbumArt}
+          </div>
+          <div id="audiod">
+              {PlayCount} plays</br>
+              {block:TrackName}Title: {TrackName}</br>{/block:TrackName}
+              {block:Artist}Artist: {Artist}</br>{/block:Artist}
+          </div>
+      {/block:AudioPlayer}
+      {block:IndexPage}
+          {block:AudioEmbed}
+              <div class="audio-embed">{AudioEmbed-250}</div>
+          {/block:AudioEmbed}
+          {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+          <div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+      {/block:IndexPage}
+      {block:PermalinkPage}
+          <div class="audio-embed-perma">{AudioEmbed-400}</div>
+      {/block:PermalinkPage}
+    {/block:Audio}
+
 
 {block:Answer}
     <div class="question">
@@ -692,6 +727,17 @@ $(document).ready(function() {
 
 {/block:indexpage}
 
+</div>
+<div style="position:fixed;bottom:5px;right:5px;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- theme button -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:125px;height:125px"
+     data-ad-client="ca-pub-6461642805771412"
+     data-ad-slot="9054274282"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 </body>

@@ -9,8 +9,8 @@ _ __ _____      ___ __ ____
 | |_| | | |  __/ | | | | |  __/\__ \
 \__|_| |_|\___|_| |_| |_|\___||___/
                                 
- fcxn theme v1.87.8                                     
-                                        
+ fcxn theme v1.8.8                                    
+ please do not copy/steal without written consent
  designed by andrew manufactured by alex 
  http://rowrz.tumblr.com/themes
 -->
@@ -168,39 +168,51 @@ border:solid 6px {color:entrybg};
 .text p{
     text-align:left;
 }
-#entry .perma{
-position:absolute;
-width: 260px;
-height: auto;
-overflow:hidden;
-bottom:4px;
-font-family: consolas;
-font-size: 12px;
-line-height:14px;
-text-align: center;
-padding:0px;
-text-transform: uppercase;
-opacity:0.0;
-background-color: rgba(255,255,255,0.5);
--webkit-transition: all 0.8s ease;
--moz-transition: all 0.8s ease;
-transition: all 0.8s ease;
--o-transition: all 0.8s ease; 
-}
+{block:ifnotShowCaptions}
+    #entry .perma{
+    position:absolute;
+    width: 100%;
+    height: auto;
+    overflow:hidden;
+    bottom:0px;
+    font-family: consolas,arial,verdana,helvetica;
+    font-size: 12px;
+    line-height:14px;
+    text-align: center;
+    padding:0px;
+    text-transform: uppercase;
+    opacity:0.0;
+    background-color: rgba(255,255,255,0.5);
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    -o-transition: all 0.8s ease; }
+    
+    #entry:hover .perma{
+    overflow:visible;
+    width: 100%;
+    opacity: 0.9;}
+    
+    #entry:hover .perma:hover{
+    padding-left:15px; 
+    width:245px;
+    opacity:1;}
+{/block:ifnotShowCaptions}
 
-#entry:hover .perma{
-overflow:visible;
-width: 260px;
-
-opacity: 0.9;
-}
-
-#entry:hover .perma:hover{
-padding-left:15px; 
-width:245px;
-opacity:1;
-}
-
+{block:ifshowcaptions}
+    #entry .perma{
+    width: 100%;
+    height: auto;
+    overflow:hidden;
+    bottom:0px;
+    font-family: consolas,arial,verdana,helvetica;
+    font-size: 9px;
+    line-height:14px;
+    text-align:right;
+    text-transform: uppercase;
+    background-color:{color:accents}; 
+    border-right:3px {color:accents} solid;}
+{/block:ifshowcaptions}
 .perm{
 display: block; 
 font-family:consolas;
@@ -217,12 +229,9 @@ margin-bottom:5px;
 -webkit-transition: all 1s ease;
 -moz-transition: all 1s ease;
 transition: all 1s ease;
--o-transition: all 1s ease; 
-}
+-o-transition: all 1s ease; }
 
-.perm:hover{
-opacity:.6; 
-}
+.perm:hover{opacity:.6;}
 
 .blogtitle{
 font-size:{text:blogtitlesize}; 
@@ -362,8 +371,53 @@ transition:all 0.7s ease-out
       margin: 0;
       padding-left: 10px;}
 {block:IndexPage}    
-   div.video iframe, div.video embed{width:100%;}
+   div.video iframe, div.video embed{width:250px;}
 {/block:IndexPage} 
+div.navi{padding-top:250px;}
+.quote > blockquote {font-family: Georgia, Times, serif;}
+.quote > blockquote {
+    border-left:none !important;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 5px 0 0;
+    quotes: "\201C""\201D""\2018""\2019";
+    word-break: break-word;}
+.quote > blockquote:before {content: open-quote;}
+.quote > blockquote:after {content: close-quote;
+    margin-left: -0.25em;}
+.quote > blockquote p:first-child,
+.quote > blockquote p:empty + p,
+.quote > blockquote p:last-child,
+.quote > blockquote p.empty-last-child {display: inline;}
+.quote > blockquote p + p {margin: 0.5em 0;}
+.quote > blockquote p:empty {display: none;}
+.quote.quote-body > blockquote{font-size:140%}
+.audio-embed > iframe{width:250px;}
+#audioplayer:hover {opacity:1;
+-webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;}
+
+#audioplayer {background:#fff;
+    width:30px;
+    height:30px;
+    border:30px solid transparent;
+    overflow:hidden;
+    position:absolute;
+    z-index:99;
+    opacity:0.3;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;}
+    
+#audiod {height:90px;
+    padding-top:5px;
+    padding-right:20px;
+    margin-left:95px;
+    overflow:auto;}
+    
+#albumart img {float:left;
+margin-right:10px;}
 {CustomCSS}
 </style>
 
@@ -468,13 +522,26 @@ transition:all 0.7s ease-out
 {/block:PermalinkPage}
 {/block:Photoset}
 
-{block:Quote}
-<span class="title">{Quote}</span><br />
-{block:Source}{Source}{/block:Source}
-{block:IndexPage}
-<br /><div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
-{/block:IndexPage}
-{/block:Quote}
+    {block:Quote}
+            <span class="quote quote-body">
+                <blockquote class="{Length}">{Quote}</blockquote>
+            </span>
+        {block:Source}
+        <table class="quote_source_table">
+            <tbody>
+                <tr>
+                    <td class="quote_source_mdash">
+                     —&nbsp;
+                    </td>
+                    <td class="quote_source">{Source}</td>
+                </tr>
+            </tbody>
+        </table>
+        {/block:Source}
+            {block:IndexPage}
+                <div class="perm"><a href="{Permalink}">{TimeAgo}</a> &nbsp;|&nbsp; <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+            {/block:IndexPage}
+    {/block:Quote}
 
 {block:Chat}
 {block:Title}<span class="title">{Title}</span>{/block:Title}
@@ -495,13 +562,32 @@ transition:all 0.7s ease-out
 {/block:Chat}
 
 {block:Audio}
-<center><div><div style="padding-top:5px;">{AudioPlayerWhite}</div><div style="margin-top:8px; float:right;"><small>
-{FormattedPlayCount} plays</small></div></div></center><br>
-{block:Caption}{Caption}{/block:Caption}
-{block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
-{/block:IndexPage}
-{/block:Audio}
+      {block:AudioPlayer} 
+          <div id="audioplayer">
+              {AudioPlayer}
+          </div>
+          <div id="albumart">
+              {block:AlbumArt}
+                  <img src="{AlbumArtURL}" width="90px">
+              {/block:AlbumArt}
+          </div>
+          <div id="audiod">
+              {PlayCount} plays</br>
+              {block:TrackName}Title: {TrackName}</br>{/block:TrackName}
+              {block:Artist}Artist: {Artist}</br>{/block:Artist}
+          </div>
+      {/block:AudioPlayer}
+      {block:IndexPage}
+          {block:AudioEmbed}
+              <div class="audio-embed">{AudioEmbed-250}</div>
+          {/block:AudioEmbed}
+          {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+          <div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+      {/block:IndexPage}
+      {block:PermalinkPage}
+          <div class="audio-embed-perma">{AudioEmbed-400}</div>
+      {/block:PermalinkPage}
+    {/block:Audio}
 
 
 {block:Video}
@@ -510,12 +596,34 @@ transition:all 0.7s ease-out
 
 {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 <div style="padding-top:5px"></div>
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {block:PermalinkPage}
 <div class="post video">{Video-400}</div>
 {/block:PermalinkPage}
 {/block:Video}
+
+{block:Answer}
+    <div class="question">
+        <div class="bubble-question">
+            {Asker}: {Question}
+        </div>
+    </div>
+    {block:Answerer}
+        <div class="answer">
+            <p class="answerer">{Answerer}:</p>
+            <blockquote><div class="answerer-answer">{Answer}</div></blockquote>
+        </div>
+    {/block:Answerer}
+
+    <div class="replies">
+        {Replies}
+    </div>
+{block:IndexPage}
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+{/block:IndexPage}
+{/block:Answer}
+
 
 {block:PermalinkPage}
 {block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}{block:HasTags} &middot; {block:Tags}<a href="TagURL"> #{Tag}</a> {/block:Tags}{/block:hasTags}

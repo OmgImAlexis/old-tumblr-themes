@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
 please do not steal nor copy without written consent                
-defensive theme v1.8.2                               
+defensive theme v1.8.3                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -369,9 +369,7 @@ font-size:{text:FontSize};}
     .post-bottom-pagination{width:250px;
         text-align:center;
         font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;
-        margin-bottom:10px;
-        position:absolute;
-        bottom:0;}
+        margin-bottom:10px;}
     #pagination,#pagination span,#pagination span > a,a.jump_page{color:{color:Pagination};}
 {/block:ifnotInfiniteScroll}
 #infscr-loading{display:none;}
@@ -714,6 +712,7 @@ ul.chat{margin-left:-20px;
     
     </div>
 {/block:Posts}
+</div>
 {block:ifnotInfiniteScroll}
     {block:ifnotDescPagination}
         {block:Pagination}
@@ -740,10 +739,12 @@ ul.chat{margin-left:-20px;
          {/block:Pagination}
     {/block:ifnotDescPagination}
 {/block:ifnotInfiniteScroll}
-</div>
 </div> 
+
 </div>
+
 </div>
+
 {block:ifInfiniteScroll}
     {block:indexpage}
         {block:Pagination}
@@ -780,5 +781,7 @@ ul.chat{margin-left:-20px;
               ga('send', 'pageview');
             </script>
 {/block:IfGoogleAnalyticsID}
+
+    
 </body>
 </html>

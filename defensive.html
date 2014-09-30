@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
 please do not steal nor copy without written consent                
-defensive theme v1.8.3                               
+defensive theme v1.8.4                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -39,7 +39,6 @@ http://rowrz.tumblr.com/themes
 <meta name="color:EntryBG" content="#FFFFFF"/> 
 <meta name="color:Borders" content="#000000"/>
 <meta name="color:Pagination" content="#FFFFFF"/>
-<meta name="color:Answers" content="#fafafa">
 
 <meta name="if:UseAccountAvatarOnBlog" content="1"/>
 <meta name="if:ShowTitleOnBlog" content="1"/>
@@ -350,13 +349,13 @@ span.entrytext > p {margin-top: 0px;}
 .index-page .1stphoto img {display: none;}
 .index-page .1stphoto img:first-child {display: block;}
 .bubble-question{border-radius:5px;
-    background-color:{color:Answers};
+    background-color:{color:Accents};
     padding:10px;
     border:1px solid #eee;}
 .answerer{margin-bottom:-5px;}
 div.bubble-answer > p {display: inline;}
 .bubble-answer{border-radius:5px;
-    background-color:{color:Answers};
+    background-color:{color:Accents};
     padding:10px;
     border:1px solid #eee;}
 .quote_source_mdash,.quote_source{vertical-align:text-top;
@@ -407,8 +406,13 @@ font-size:{text:FontSize};}
     border-left: 3px solid #eee;
     margin: 1em 0;
     padding-left: 10px;}
-ul.chat{margin-left:-20px;
-    margin-top:0px;}
+li.chat{margin-left:-35px;
+    margin-right:5px;
+    margin-top:0px;
+    padding:2px;
+    line-height:1.4;
+    list-style:none;}
+li.chat-odd{background-color:{color:Accents};}
 .perma.phtst-perma{
     margin-top:5px;
     padding-bottom:1px;}
@@ -546,8 +550,9 @@ ul.chat{margin-left:-20px;
         {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
     <p style="margin-top:-5px"><p>
     <div class="perma">
-    <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-    <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
+        <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+        <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+    </div>
     {/block:IndexPage}
         {block:PermalinkPage}
         {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
@@ -602,17 +607,11 @@ ul.chat{margin-left:-20px;
     {/block:Quote}
     
     {block:Chat}
-        {block:Title}<span class="title">{Title}</span>{/block:Title}
-        <ul class="chat">
-            {block:Lines}
-                <li class="user_{UserNumber}">
-                {block:Label}
-                <span class="label">{Label}</span>
-                {/block:Label}
-                
-                {Line}
-                </li>
-            {/block:Lines}
+        {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+        <ul class="conversation">
+        {block:Lines}
+            <li class="chat-{Alt} chat">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
+        {/block:Lines}
         </ul>
         {block:IndexPage}
             <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>

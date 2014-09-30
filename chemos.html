@@ -12,7 +12,7 @@
  | |_| | | |  __/ | | | | |  __/\__ \
   \__|_| |_|\___|_| |_| |_|\___||___/
                     
-chemos theme v1.7.4
+chemos theme v1.7.5
 please do not steal nor copy without written consent
 designed by andrew manufactured by alex
 http://rowrz.tumblr.com/themes
@@ -537,15 +537,17 @@ margin-right:10px;}
 
 {block:Photoset}
 {block:IndexPage}
-<center>{Photoset}</center>
+    {block:Photos}
+        <img src="{PhotoURL-500}" width="{PhotoWidth-500}"height="{PhotoHeight-500}" />
+    {/block:Photos}
 {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 <div class="perma">
 <a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; 
 <a href="{Permalink}">{NoteCountWithLabel}</a></div>
 {/block:IndexPage}
-{block:PermalinkPage}
-{Photoset}
-{/block:PermalinkPage}
+    {block:PermalinkPage}
+        {Photoset}
+    {/block:PermalinkPage}
 {/block:Photoset}
 
     {block:Quote}
@@ -728,17 +730,7 @@ $(document).ready(function() {
 {/block:indexpage}
 
 </div>
-<div style="position:fixed;bottom:5px;right:5px;">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- theme button -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:125px;height:125px"
-     data-ad-client="ca-pub-6461642805771412"
-     data-ad-slot="9054274282"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+
 
 </body>
 </html>

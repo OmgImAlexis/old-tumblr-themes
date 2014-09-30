@@ -9,7 +9,7 @@ _ __ _____      ___ __ ____
 | |_| | | |  __/ | | | | |  __/\__ \
 \__|_| |_|\___|_| |_| |_|\___||___/
                                 
- fcxn theme v1.8.8                                    
+ fcxn theme v1.9.0                                    
  please do not copy/steal without written consent
  designed by andrew manufactured by alex 
  http://rowrz.tumblr.com/themes
@@ -22,45 +22,38 @@ _ __ _____      ___ __ ____
             <meta name="description" content="{MetaDescription}" />
 {/block:Description}
 <link rel="shortcut icon" href="{Favicon}">
-<meta name="font:posts" content="arial"/>
-<meta name="font:posttitle" content="arial"/>
-<meta name="font:blogtitle" content="ventography"/>
-<meta name="font:desc" content="arial"/>
+<meta name="text:SidebarHeight" content="150px"/>
+<meta name="text:BlogTitleSize" content="40px"/>
+<meta name="text:BlogTitleLineHeight" content="27px"/>
+<meta name="font:Posts" content="arial"/>
+<meta name="font:PostTitle" content="arial"/>
+<meta name="font:Blogtitle" content="ventography"/>
+<meta name="font:Desc" content="arial"/>
 <meta name="color:Background" content="#eeeeee"/>
 <meta name="color:Text" content="#000000"/>
 <meta name="color:Hover" content="#FFFFFF"/>
 <meta name="color:Link" content="#000000"/>
-<meta name="color:navodd" content="#000000"/>
-<meta name="color:naveven" content="#ff0000"/>
-<meta name="color:accents" content="#eeeeee"/>
-<meta name="color:linkhover" content="#FFFFFF"/>
-<meta name="color:title" content="#000000"/>
-<meta name="color:blogtitle" content="" />
-<meta name="color:desctext" content="" />
-<meta name="color:blogtitleunderline" content="#fff" />
-<meta name="color:entrybg" content="#FFFFFF"/>
+<meta name="color:NavOdd" content="#000000"/>
+<meta name="color:NavEven" content="#ff0000"/>
+<meta name="color:Accents" content="#eeeeee"/>
+<meta name="color:LinkHover" content="#FFFFFF"/>
+<meta name="color:Title" content="#000000"/>
+<meta name="color:BlogTitle" content="#000000" />
+<meta name="color:DescText" content="" />
+<meta name="color:BlogtitleUnderline" content="#fff" />
+<meta name="color:EntryBG" content="#FFFFFF"/>
 <meta name="image:Background" content="0"/>
-<meta name="image:sidebar background" content="http://static.tumblr.com/26d0cfac1e543ad2866bcf589cf37008/4ra4qv5/l8sn2sflv/tumblr_static_tuscany_landscape_monochrome-t2.jpg"/>
-
-<meta name="text:sidebarheight" content="150px"/>
-<meta name="text:posttop" content="150px"/>
-<meta name="text:blogtitlesize" content="70px"/>
-<meta name="text:blogtitlelineheight" content="27px"/>
-
-<meta name="text:home link title" content="return"/>
-
+<meta name="image:Sidebar Background" content="http://static.tumblr.com/26d0cfac1e543ad2866bcf589cf37008/4ra4qv5/l8sn2sflv/tumblr_static_tuscany_landscape_monochrome-t2.jpg"/>
+<meta name="text:Home Link Title" content="return"/>
 <meta name="text:descfontsize" content="14px"/>
-
-<meta name="text:link one" content=""/>
-<meta name="text:link one title" content=""/>
-
-<meta name="text:link two" content=""/>
-<meta name="text:link two title" content=""/>
-
-<meta name="text:link three" content=""/>
-<meta name="text:link three title" content=""/>
-
-<meta name="if:showcaptions" content="1" />
+<meta name="text:Link One" content=""/>
+<meta name="text:Link One title" content=""/>
+<meta name="text:Link Two" content=""/>
+<meta name="text:Link Two Title" content=""/>
+<meta name="text:Link Three" content=""/>
+<meta name="text:Link Three Title" content=""/>
+<meta name="if:ShowCaptions" content="1" />
+<meta name="if:CustomSideBG" content="1"/>
 
 <script src="http://static.tumblr.com/ojd74qh/79Qn7c9an/jquery-1.11.0.fcxn.min.js"></script>
 
@@ -116,7 +109,7 @@ width:860px;
 {/block:permalinkpage}
 left:184px;
 margin-top: 0px;
-padding-top:{text:posttop};
+padding-top:150px;
 }
 
 body {
@@ -281,7 +274,10 @@ color: {color:text};
     font-size:{text:descfontsize};
 }
 #sidebar{ 
-    background-image:url({image:sidebar background});
+    {block:ifCustomSideBG}
+        background-image:url({image:sidebar background});
+    {/block:ifCustomSideBG}
+    {block:ShowHeaderImage}{block:ifnotCustomSideBG}background-image:url({HeaderImage});{/block:ifnotCustomSideBG}{/block:ShowHeaderImage}
     -webkit-background-size: cover; 
     -moz-background-size: cover; 
     -o-background-size: cover; 
@@ -293,9 +289,9 @@ color: {color:text};
     height:{text:sidebarheight};
     color:{color:desctext};
     z-index:99999;
-    border-bottom:3px solid #5a5a5a;
-    border-right:3px solid #5a5a5a;
-    border-left:3px solid #5a5a5a;
+    border-bottom:3px solid {color:Accents};
+    border-right:3px solid {color:Accents};
+    border-left:3px solid {color:Accents};
 }
 
 .titlelink:hover{
@@ -466,12 +462,12 @@ margin-right:10px;}
 
 {block:Posts}
 <div id="entry">
-<div id="text">
+<div class="text">
 {block:Text}
 {block:Title}<span class="title">{Title}</span>{/block:Title}
 <span class="entrytext">{Body}</span></a>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> &nbsp;|&nbsp; <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> &nbsp;|&nbsp; <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {/block:Text}
 </div>
@@ -485,23 +481,20 @@ margin-right:10px;}
 {block:Link}
 
 {block:Photo}
-{block:IndexPage}
-<div class="perma"><a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; <a href="{Permalink}" target="_blank">{NoteCountWithLabel}</a></div>
-
-{/block:IndexPage}
 {block:IndexPage}{LinkOpenTag}<div class="photo"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="260"/></div>{LinkCloseTag}
 {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+<div class="perma"><a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; <a href="{Permalink}" target="_blank">{NoteCountWithLabel}</a></div>
 {/block:IndexPage}
 {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
 {/block:Photo}
 
 {block:Panorama}
-{block:IndexPage}
-<div class="perma"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-{/block:IndexPage}
+
+
 {block:IndexPage}
     {LinkOpenTag}<div class="photo"><img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}" width="260"/></div>{LinkCloseTag}
     {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+    <div class="perma"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
     {/block:IndexPage}
     {block:PermalinkPage}
     {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
@@ -511,15 +504,17 @@ margin-right:10px;}
 
 {block:Photoset}
 {block:IndexPage}
+    {block:Photos}
+        <img src="{PhotoURL-500}" width="{PhotoWidth-500}"height="{PhotoHeight-500}" />
+    {/block:Photos}
+{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 <div class="perma">
 <a href="{reblogurl}">reblog</a> &nbsp;|&nbsp; 
 <a href="{Permalink}">{NoteCountWithLabel}</a></div>
-<center>{Photoset}</center>
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 {/block:IndexPage}
-{block:PermalinkPage}
-{Photoset}
-{/block:PermalinkPage}
+    {block:PermalinkPage}
+        {Photoset}
+    {/block:PermalinkPage}
 {/block:Photoset}
 
     {block:Quote}
@@ -557,7 +552,7 @@ margin-right:10px;}
 {/block:Lines}
 </ul>
 {block:IndexPage}
-<div class="perm"><a href="{Permalink}">{TimeAgo}</a> with <a href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
 {/block:IndexPage}
 {/block:Chat}
 
@@ -590,19 +585,6 @@ margin-right:10px;}
     {/block:Audio}
 
 
-{block:Video}
-{block:IndexPage}
-<div class="post video">{Video-250}</div>
-
-{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
-<div style="padding-top:5px"></div>
-<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
-{/block:IndexPage}
-{block:PermalinkPage}
-<div class="post video">{Video-400}</div>
-{/block:PermalinkPage}
-{/block:Video}
-
 {block:Answer}
     <div class="question">
         <div class="bubble-question">
@@ -624,14 +606,41 @@ margin-right:10px;}
 {/block:IndexPage}
 {/block:Answer}
 
+{block:Video}
+{block:IndexPage}
+<div class="post video">{Video-250}</div>
+
+{block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
+<div style="padding-top:5px"></div>
+<div class="perm"><a target="_blank" href="{ReblogURL}">{TimeAgo}</a> with <a target="_blank" href="{Permalink}"><a href="{Permalink}">{notecountwithlabel}</span></a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="post video">{Video-400}</div>
+{/block:PermalinkPage}
+{/block:Video}
 
 {block:PermalinkPage}
-{block:Caption}{Caption}{/block:Caption}{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}{block:HasTags} &middot; {block:Tags}<a href="TagURL"> #{Tag}</a> {/block:Tags}{/block:hasTags}
-
+    <div class="post-notes">
+        {block:Caption}
+            {Caption}
+        {/block:Caption}
+        {block:NoteCount}
+            <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+        {/block:NoteCount}
+        {block:ContentSource}
+        Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+        {/block:ContentSource}
+        {block:RebloggedFrom}
+            Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
+        {/block:RebloggedFrom}{block:NoteCount}
+        {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
+                {block:Tags}
+                    <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
+                {/block:Tags}
+            {/block:hasTags}
+            {PostNotes}
+    </div>
 {/block:PermalinkPage}
-
-{block:PostNotes}{PostNotes}
-{/block:PostNotes}
 </div>
 
 {/block:Posts}

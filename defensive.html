@@ -191,9 +191,11 @@ height:207px;
 {/block:PermalinkPage}}
 
 {block:indexpage}
+    {block:ifMultiColumns}
     #posts{{block:ifnot2ColumnsOnly}max-width:80%{/block:ifnot2ColumnsOnly}
-    {block:ifMultiColumns}{block:if2ColumnsOnly}width:620px;{/block:if2ColumnsOnly}{/block:ifMultiColumns}
+    {block:if2ColumnsOnly}width:620px;{/block:if2ColumnsOnly}
     }
+    {block:ifMultiColumns}
 {/block:indexpage}
 .left{margin-left:400px;}
 #posts{

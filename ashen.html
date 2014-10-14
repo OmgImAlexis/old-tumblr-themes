@@ -1,3 +1,5 @@
+<html>
+<head>
 <!--                                  
 _ __ _____      ___ __ ____        
 | '__/ _ \ \ /\ / / '__|_  /        
@@ -9,14 +11,11 @@ _ __ _____      ___ __ ____
 | |_| | | |  __/ | | | | |  __/\__ \
 \__|_| |_|\___|_| |_| |_|\___||___/
                           
-ashen theme v1.6.8                                    
+ashen theme v1.6.2                                    
 designed & manufactured by alex: http://rowrz.com/
 help with ideas by shantel: http://discountable.tk/
 http://rowrz.tumblr.com/themes
 -->
-<html>
-<head>
-
 <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
 {block:Description}
             <meta name="description" content="{MetaDescription}" />
@@ -30,14 +29,7 @@ http://rowrz.tumblr.com/themes
 <meta name="color:entrybg" content="#FFFFFF"/>
 <meta name="color:entryborbg" content="#FFFFFF"/>
 <meta name="color:tooltips" content="#000000"/>
-{block:ifcustomcolorscheme}
-<meta name="color:nav1" content="#000000" />
-<meta name="color:nav2" content="#666666"/>
-<meta name="color:nav3" content="#999999"/>
-<meta name="color:nav4" content="#aaaaaa"/>
-<meta name="color:nav5" content="#dddddd"/>
-<meta name="color:nav6" content="#f1f1f1"/>
-{/block:ifcustomcolorscheme}
+
 <meta name="image:sidebarpic" content="{block:ShowAvatar}{PortraitURL-128}{/block:ShowAvatar}{block:HideAvatar}0{/block:HideAvatar}">
 
 <meta name="if:colorscheme" content="1"/>
@@ -56,6 +48,15 @@ http://rowrz.tumblr.com/themes
 <meta name="if:2columns" content="1"/>
 <meta name="if:fadedimages" content="1"/>
 <meta name="if:TextLinks" content="1"/>
+
+{block:ifcustomcolorscheme}
+<meta name="color:nav1" content="#000000" />
+<meta name="color:nav2" content="#666666"/>
+<meta name="color:nav3" content="#999999"/>
+<meta name="color:nav4" content="#aaaaaa"/>
+<meta name="color:nav5" content="#dddddd"/>
+<meta name="color:nav6" content="#f1f1f1"/>
+{/block:ifcustomcolorscheme}
 
 <meta name="text:tab 1 title" content="stats"/>
 <meta name="text:tab 1" content="put stuff in here like your fhs follower counter or page views!; html can be pasted in here"/>
@@ -89,11 +90,11 @@ http://rowrz.tumblr.com/themes
 
 
 
-<script src="http://static.tumblr.com/ojd74qh/LCQn7c8wv/g.jquery.1.11.0.min.ashen.js"></script>
+<script src="https://secure.static.tumblr.com/ojd74qh/LCQn7c8wv/g.jquery.1.11.0.min.ashen.js"></script>
 
-<link href="http://static.tumblr.com/ojd74qh/nF6n4lotj/style-my-tooltips.css" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script src="http://static.tumblr.com/ojd74qh/2nFn4lotg/jquery.style-my-tooltips.js"></script>
+<link href="https://secure.static.tumblr.com/ojd74qh/nF6n4lotj/style-my-tooltips.css" rel="stylesheet" type="text/css" />
+<script src="https://secure.static.tumblr.com/4ra4qv5/NYKndgeb3/jquery.min.js"></script>
+<script src="https://secure.static.tumblr.com/ojd74qh/2nFn4lotg/jquery.style-my-tooltips.js"></script>
 
 {block:ifhovertooltips}
 <script>
@@ -109,7 +110,7 @@ http://rowrz.tumblr.com/themes
     })(jQuery);
 </script>
 {/block:ifhovertooltips}
-<script src="http://static.tumblr.com/ojd74qh/zfyn5qcpo/g.jquery.1.6.2.min.js"></script>
+<script src="https://secure.static.tumblr.com/ojd74qh/zfyn5qcpo/g.jquery.1.6.2.min.js"></script>
 <script>
 $(document).ready(function(){
   $("#click").click(function(){
@@ -269,7 +270,7 @@ margin:16px;
 float:left;
 padding:9px;
 {block:IndexPage}
-width:200px;
+width:250px;
 {/block:IndexPage}
 padding-bottom:6px;
 z-index:100;
@@ -308,7 +309,7 @@ max-width:400px;
 {/block:PermalinkPage}}
 
 {block:IndexPage}    
-   div.video iframe, div.video embed{width:200px;}
+   div.video iframe, div.video embed{width:250px;}
 {/block:IndexPage} 
 #text, .txt, #entry #text, .text{{block:PermalinkPage}width:400px;{/block:PermalinkPage}}
 #answer{{block:IndexPage}
@@ -1163,7 +1164,7 @@ color:{color:Text};
 
 {block:Video}
 {block:IndexPage}
-<div class="post video">{Video-250}</div>
+<div class="post video">{VideoEmbed-250}</div>
 
 {block:ifshowcaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifshowcaptions}
 <div style="padding-top:5px"></div>
@@ -1207,12 +1208,26 @@ color:{color:Text};
 
 
 {block:PermalinkPage}
-<div id="permalinks">
-{block:Date} {TimeAgo}, {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}, {Year}{/block:Date} {block:NoteCount}/ {NoteCountWithLabel}{/block:NoteCount}
-{block:RebloggedFrom}</br>Original: <a href="{ReblogRootURL}">{ReblogRootName}</a> / Via: <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom}
-{block:HasTags}</br>Tagged as: {block:Tags}#<a href="{TagURL}">{Tag}</a> {/block:Tags}{/block:HasTags}
-{block:PostNotes}{PostNotes}{/block:PostNotes}</div>
-</span>{/block:PermalinkPage}
+        <div class="post-notes">
+            {block:Caption}
+                {Caption}
+            {/block:Caption}
+            {block:NoteCount}
+                <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+            {/block:NoteCount}
+            {block:ContentSource}
+            Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+            {/block:ContentSource}
+            {block:RebloggedFrom}
+                Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
+            {/block:RebloggedFrom}{block:NoteCount}
+            {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
+                    {block:Tags}
+                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
+                    {/block:Tags}
+                {/block:hasTags}
+                {PostNotes}
+        </div>{/block:PermalinkPage}
 
 </div>
 
@@ -1240,12 +1255,12 @@ color:{color:Text};
 <div id="guts2">
 {block:ifsocialnetworks}
 {block:iffbusername}
-<a href="http://facebook.com/{text:fbusername}" title="/{text:fbusername}" target="_blank"><img src="http://static.tumblr.com/4ra4qv5/mjhn4jy7j/facebook_round.png" width="30"/></a>{/block:iffbusername}
+<a href="http://facebook.com/{text:fbusername}" title="/{text:fbusername}" target="_blank"><img src="https://secure.static.tumblr.com/4ra4qv5/mjhn4jy7j/facebook_round.png" width="30"/></a>{/block:iffbusername}
 
-{block:iftwitterusername}<a href="http://twitter.com/{text:twitterusername}" title="@{text:twitterusername}" target="_blank"><img src="http://static.tumblr.com/4ra4qv5/WPCn4jy7e/twitter_round.png" width="30"/></a>{/block:iftwitterusername}
+{block:iftwitterusername}<a href="http://twitter.com/{text:twitterusername}" title="@{text:twitterusername}" target="_blank"><img src="https://secure.static.tumblr.com/4ra4qv5/WPCn4jy7e/twitter_round.png" width="30"/></a>{/block:iftwitterusername}
 
 {block:ifigusername}
-<a href="http://instagram.com/{text:igusername}" title="@{text:igusername}" target="_blank"><img src="http://static.tumblr.com/4ra4qv5/xrin4jy7q/instagram_round.png" width="30"/></a>{/block:ifigusername}
+<a href="http://instagram.com/{text:igusername}" title="@{text:igusername}" target="_blank"><img src="https://secure.static.tumblr.com/4ra4qv5/xrin4jy7q/instagram_round.png" width="30"/></a>{/block:ifigusername}
 
 {block:ifkikusername}<p>kik: {text:kikusername}</p>{/block:ifkikusername}
 
@@ -1267,10 +1282,10 @@ color:{color:Text};
 
 
 {block:indexpage}
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
-<script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/KOWndgeic/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="https://securestatic.tumblr.com/4ra4qv5/g3Pndgehd/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
+<script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/LwQndgehb/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 //http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/

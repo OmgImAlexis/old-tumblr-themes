@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--                                  
-_ __ _____      ___ __ ____        
-| '__/ _ \ \ /\ / / '__|_  /        
-| | | (_) \ V  V /| |   / /        
-|_|  \___/ \_/\_/ |_|  /___|        
-| | | |                            
+<!--
+_ __ _____      ___ __ ____
+| '__/ _ \ \ /\ / / '__|_  /
+| | | (_) \ V  V /| |   / /
+|_|  \___/ \_/\_/ |_|  /___|
+| | | |
 | |_| |__   ___ _ __ ___   ___  ___
 | __| '_ \ / _ \ '_ ` _ \ / _ \/ __|
 | |_| | | |  __/ | | | | |  __/\__ \
 \__|_| |_|\___|_| |_| |_|\___||___/
-                      
-please do not steal nor copy without written consent                
-defensive theme v1.8.9-1                               
+
+please do not steal nor copy without written consent
+defensive theme v1.8.9-1
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -36,7 +36,7 @@ http://rowrz.tumblr.com/themes
 <meta name="color:Link" content="#000000"/>
 <meta name="color:Accents" content="#eeeeee"/>
 <meta name="color:LinkHover" content="#888888"/>
-<meta name="color:EntryBG" content="#FFFFFF"/> 
+<meta name="color:EntryBG" content="#FFFFFF"/>
 <meta name="color:Borders" content="#000000"/>
 <meta name="color:Pagination" content="#FFFFFF"/>
 
@@ -70,70 +70,29 @@ http://rowrz.tumblr.com/themes
 
 <meta name="text:Google analytics ID" content="">
 {/block:hidden}
-<script src="https://secure.static.tumblr.com/4ra4qv5/Tnhndgqkt/jquery.1.11.0.min.defensive.js"></script>
-{block:Indexpage}
-        <script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
-        <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
-        <script type="text/javascript">
-        $(window).load(function () {
-            $('#posts').masonry({
-                itemSelector: "#entry, #fixed",
-            },
-                function() {
-                    $('#posts').masonry( { 
-                        appendedContent: $(this) 
-                        
-                    });
-                }
-            );
-        });
-        </script>
-    {block:ifInfiniteScroll}
-        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/lu5ndgj3r/jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/7Jfndgj43/isotope.pkgd.min.js"></script>
-        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
-        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/RR2ndgj4l/imagesloaded.pkgd.min.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-        //http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
-            var $container = $('#posts');
-               
-            // Fire Isotope only when images are loaded
-            $container.imagesLoaded(function(){
-                $container.isotope({
-                    itemSelector : '#entry, #fixed',
-                    masonry: {
-                    }
-                });
-            });
-         
-            // Infinite Scroll
-            $('#posts').infinitescroll({
-                navSelector  : '#pagination', 
-                nextSelector : '#pagination a', 
-                itemSelector : '#entry',
-                loadingImg : "",
-                loadingText : "",
-                bufferPx : 100,
-                extraScrollPx: 200,
-                loading: {
-                    finishedMsg: '',
-                }
-            },
-         
-            // Infinite Scroll Callback
-            function( newElements ) {
-                var $newElems = jQuery( newElements ).hide(); 
-                $newElems.imagesLoaded(function(){
-                    $newElems.fadeIn();
-                    $container.isotope( 'appended', $newElems );
-                });
-            });
-         
-        });
-        </script>
-    {/block:ifInfiniteScroll}
-{/block:Indexpage}
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/a8Onbmv7g/infinitescroll.js"></script>
+<script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/zQmnbmxr9/pageload.js"></script>
+<script type="text/javascript">
+var columnsObj = {
+    one: function() {
+        $("#posts").css("width", "400px");
+    },
+    two: function() {
+        $("#posts").css("width", "620px");
+    },
+    three: function() {
+        $("#posts").css("max-width", "80%");
+    }
+};
+$(document).ready(function() {
+    columnsObj.{select:Layout}();
+    $.loadInfiniteScroll({colourQuotes: false});
+    });
+</script>
+
 <style type="text/css">
 
 @font-face
@@ -142,11 +101,11 @@ src: url(http://static.tumblr.com/ojd74qh/noSn5fmf6/slkscr.ttf);}
 
 ::-webkit-scrollbar {width: 9px; height: 3px; background: #FFFFFF;}
 ::-webkit-scrollbar-thumb {background-color:#ffffff ; border: 1px solid black;}
- 
+
 -webkit-transition: all 0.4s ease-in-out;
- 
+
 -moz-transition: all 0.4s ease-in-out;
- 
+
 -o-transition: all 0.4s ease-in-out;
 
 a {text-decoration:none;
@@ -178,7 +137,7 @@ background-size:cover;
 }
 
 #tumblr_controls{position:fixed !important;right:104px;}
-#text img, #entry img {height: auto;
+#text img, .post img {height: auto;
     max-width:100%;}
 
 #center{padding-top:3px;
@@ -194,32 +153,32 @@ height:207px;
 
 /*{block:indexpage}
     {block:ifMultiColumns}
-    #posts{{block:ifnot2ColumnsOnly}max-width:80%{/block:ifnot2ColumnsOnly}
+    .posts{{block:ifnot2ColumnsOnly}max-width:80%{/block:ifnot2ColumnsOnly}
     {block:if2ColumnsOnly}width:620px;{/block:if2ColumnsOnly}
     }
     {block:ifMultiColumns}
     {block:ifnotMultiColumns}
-        #posts{
+        .posts{
             width:400;
         }
     {/block:ifnotMultiColumns}
 {/block:indexpage}*/
 .left{margin-left:400px;}
-#posts{
+.posts{
 {block:permalinkpage}
     width:860px;
 {/block:permalinkpage}
 
 margin-top: 15px;}
 
-#entry blockquote {border-left: solid 2px {color:Accents};
+.post blockquote {border-left: solid 2px {color:Accents};
       margin: 0;
       padding-left: 10px;}
-      
+
 .text p{text-align:left;}
 .txttitle{font-size:140%;}
 
-#entry {margin:16px;
+.post {margin:16px;
 padding:9px;
 padding-bottom:6px;
 z-index:100;
@@ -232,7 +191,7 @@ border:1px solid {color:Borders};
 {block:ifBorders}
 background-color:{color:entrybg};}
 
-#entry .photo{margin-bottom:5px;
+.post .photo{margin-bottom:5px;
    padding-bottom:0px;}
 .perma1, .perma2{margin-top:-10px;
     padding-top:5px;}
@@ -264,25 +223,25 @@ transition: all 0.8s ease;
 .perma1, .perma2, .perm, .perm2{
     font-family:silkscreen,'courier new',monospace,consolas;
     font-size:90%;}
-    
-.perm{display: block; 
+
+.perm{display: block;
 font-size:90%;
 line-height:13px;
-text-transform:uppercase; 
+text-transform:uppercase;
 -webkit-transition: all 1s ease;
 -moz-transition: all 1s ease;
 transition: all 1s ease;
 -o-transition: all 1s ease;}
 
-.perm2 {display: block; 
+.perm2 {display: block;
 font-size:90%;
 line-height:13px;
-text-transform:uppercase; 
+text-transform:uppercase;
 margin-top:-13px;
 -webkit-transition: all 1s ease;
 -moz-transition: all 1s ease;
 transition: all 1s ease;
--o-transition: all 1s ease; 
+-o-transition: all 1s ease;
 float:right;}
 
 {block:ifShowCaptions}
@@ -302,7 +261,7 @@ font-size:{text:SideFontSize};
 z-index:98;
 -webkit-transition: all 0.8s linear;
 -moz-transition: all 0.8s linear;
-transition: all 0.8s linear; 
+transition: all 0.8s linear;
 font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;}
 .sidebar .sideguts{background-color:{color:entrybg};
 padding:14px;
@@ -330,25 +289,25 @@ width:100px;
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
     -o-transition: all 0.6s ease-out;}
-    
+
 #audiod {height:90px;
     padding-top:5px;
     padding-right:20px;
     margin-left:95px;
     overflow:auto;}
-    
+
 #albumart img {float:left;
 margin-right:10px;}
 
-{block:IndexPage}    
+{block:IndexPage}
     div.video iframe, div.video embed{width:200px;}
-{/block:IndexPage} 
+{/block:IndexPage}
 
 .sideimg-circle img{border-radius: 50%;}
 .sideimg{display:block;
     width:100%;
     padding-bottom:2px;}
-span.entrytext > p {margin-top: 0px;}
+span.posttext > p {margin-top: 0px;}
 .photo img{width:100%;}
 .index-page .1stphoto img {display: none;}
 .index-page .1stphoto img:first-child {display: block;}
@@ -491,12 +450,12 @@ pre{
         {block:ifDescPagination}
             {block:Pagination}
             <div id="pagination" class="desc-pagination">
-            
+
                   {block:JumpPagination length="5"}
                         {block:CurrentPage}
                               <span class="current_page">{PageNumber}</span>
                         {/block:CurrentPage}
-            
+
                         {block:JumpPage}
                               <a class="jump_page" href="{URL}">{PageNumber}</a>
                         {/block:JumpPage}
@@ -517,9 +476,9 @@ pre{
 
 
 
-<div id="posts" class="{block:TagPage}tag_page {/block:TagPage}{block:PermalinkPage}perma_page{/block:PermalinkPage} posts">
+<div id="posts" class="{block:TagPage}tag_page {/block:TagPage}{block:PermalinkPage}perma_page{/block:PermalinkPage}">
 {block:Posts}
-<div id="entry" class="{block:IndexPage}{TagsAsClasses}{block:IndexPage} entry {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}">
+<div class="post" class="{block:IndexPage}{TagsAsClasses}{block:IndexPage} {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}">
     {block:Text}
         {block:Title}<span class="txttitle">{Title}</span>{/block:Title}
         <span class="entrytext">{Body}</span></a>
@@ -528,7 +487,7 @@ pre{
         <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
         {/block:IndexPage}
     {/block:Text}
-    
+
     {block:Link}
         <a href="{URL}" class="title">{Name}</a>
         {block:Description}{Description}{/block:Description}
@@ -537,9 +496,9 @@ pre{
         <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
         {/block:IndexPage}
     {block:Link}
-    
+
     {block:Photo}
-    
+
     {block:IndexPage}
     <div class="photo">
     <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
@@ -551,7 +510,7 @@ pre{
     {/block:IndexPage}
     {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
     {/block:Photo}
-    
+
     {block:Panorama}
     {block:IndexPage}
         {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}" width="200"/>{LinkCloseTag}
@@ -566,8 +525,8 @@ pre{
         {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
         {/block:PermalinkPage}
     {/block:Panorama}
-    
-    
+
+
     {block:Photoset}
         {block:IndexPage}
             <div class="photo">
@@ -590,8 +549,8 @@ pre{
             {Photoset}
         {/block:PermalinkPage}
     {/block:Photoset}
-    
-    
+
+
     {block:Quote}
             <span class="quote quote-body">
                 <blockquote class="{Length}">{Quote}</blockquote>
@@ -613,7 +572,7 @@ pre{
                 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
             {/block:IndexPage}
     {/block:Quote}
-    
+
     {block:Chat}
         {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
         <ul class="conversation">
@@ -626,9 +585,9 @@ pre{
             <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
         {/block:IndexPage}
     {/block:Chat}
-    
+
     {block:Audio}
-      {block:AudioPlayer} 
+      {block:AudioPlayer}
           <div id="audioplayer">
               {AudioPlayer}
           </div>
@@ -655,7 +614,7 @@ pre{
           <div class="audio-embed-perma">{AudioEmbed-400}</div>
       {/block:PermalinkPage}
     {/block:Audio}
-    
+
     {block:Video}
         {block:IndexPage}
           <div class="post video">{VideoEmbed-250}</div>
@@ -668,8 +627,8 @@ pre{
         <div class="post video" style="margin-bottom:5px;">{VideoEmbed-400}</div>
       {/block:PermalinkPage}
     {/block:Video}
-    
-    
+
+
     {block:Answer}
         <div class="question">
             <div class="bubble-question">
@@ -681,7 +640,7 @@ pre{
                 <p><div class="bubble-answer">{Answerer}: {Answer}</div></p>
             </div>
         {/block:Answerer}
-    
+
         <div class="replies">
             {Replies}
         </div>
@@ -689,11 +648,11 @@ pre{
     <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
     <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
     {/block:IndexPage}
-    
+
     {/block:Answer}
-    
-    
-    
+
+
+
     {block:PermalinkPage}
         <div class="post-notes">
             {block:Caption}
@@ -710,13 +669,13 @@ pre{
             {/block:RebloggedFrom}{block:NoteCount}
             {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
                     {block:Tags}
-                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a> 
+                        <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a>
                     {/block:Tags}
                 {/block:hasTags}
                 {PostNotes}
         </div>
     {/block:PermalinkPage}
-    
+
     </div>
 {/block:Posts}
 </div>
@@ -726,27 +685,27 @@ pre{
             <div id="pagination" class="post-bottom-pagination">
             {block:PreviousPage}<span class="prev-nav-button">
                         <a href="{PreviousPage}">&#8592; Previous | </a></span>
-                  {/block:PreviousPage} 
+                  {/block:PreviousPage}
                   {block:JumpPagination length="5"}
                         {block:CurrentPage}
                               <span class="current_page">{PageNumber}</span>
                         {/block:CurrentPage}
-            
+
                         {block:JumpPage}
                               <a class="jump_page" href="{URL}">{PageNumber}</a>
                         {/block:JumpPage}
-                        
+
                   {/block:JumpPagination}
-                  
+
                   <span class="next-nav-button">
-                  {block:NextPage} 
+                  {block:NextPage}
                         <a href="{NextPage}"> | Next &#8594;</a>
                   {/block:NextPage}</span>
             </div>
          {/block:Pagination}
     {/block:ifnotDescPagination}
 {/block:ifnotInfiniteScroll}
-</div> 
+</div>
 
 </div>
 
@@ -759,17 +718,17 @@ pre{
                       {block:PreviousPage}
                             <a href="{PreviousPage}">Previous</a>
                       {/block:PreviousPage}
-                
+
                       {block:JumpPagination length="5"}
                             {block:CurrentPage}
                                   <span class="current_page">{PageNumber}</span>
                             {/block:CurrentPage}
-                
+
                             {block:JumpPage}
                                   <a class="jump_page" href="{URL}">{PageNumber}</a>
                             {/block:JumpPage}
                       {/block:JumpPagination}
-                
+
                       {block:NextPage}
                             <a href="{NextPage}">Next</a>
                       {/block:NextPage}
@@ -788,10 +747,5 @@ pre{
               ga('send', 'pageview');
             </script>
 {/block:IfGoogleAnalyticsID}
-<script>
-    $(document).ready(function () {
-        columnsObj.{select:Layout}();
-    });
-</script>
 </body>
 </html>

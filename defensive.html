@@ -84,7 +84,8 @@ $(document).ready(function() {
     // columnCount is the amount of columns you want
     // columnWidth is the width of the columns
     // columnFullSize is the width of the parent div when you're using a percentage in the columnWidth
-    $.loadInfiniteScroll({colourQuotes: false, columnCount: {select:Layout}, columnWidth: {select:ColumnWidth}, columnFullSize: 800});
+    // columnWidth requires quotes around it to allow percentages to work
+    $.loadInfiniteScroll({colourQuotes: false, columnCount: {select:Layout}, columnWidth: '{select:ColumnWidth}', columnFullSize: 800});
 
 });
 </script>

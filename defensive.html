@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
 please do not steal nor copy without written consent                
-defensive theme v1.8.9                               
+defensive theme v1.8.9-1                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -71,19 +71,13 @@ http://rowrz.tumblr.com/themes
 <meta name="text:Google analytics ID" content="">
 {/block:hidden}
 <script src="https://secure.static.tumblr.com/4ra4qv5/Tnhndgqkt/jquery.1.11.0.min.defensive.js"></script>
-   {block:Indexpage}
+{block:Indexpage}
         <script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
         <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
-        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/Qlbndcfnn/imagesloaded.pkgd.min.js"></script>
         <script type="text/javascript">
-        var $container = $('#posts');
         $(window).load(function () {
             $('#posts').masonry({
-                itemSelector: "#entry",
-                columnWidth: function( containerWidth ) {
-                    return containerWidth / 3
-                  },
-                isAnimated: true,
+                itemSelector: "#entry, #fixed",
             },
                 function() {
                     $('#posts').masonry( { 
@@ -94,13 +88,11 @@ http://rowrz.tumblr.com/themes
             );
         });
         </script>
-    
     {block:ifInfiniteScroll}
-    <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/Vhondcfma/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/sujndcfn1/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
-    <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/Qlbndcfnn/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript">
+        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/lu5ndgj3r/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/7Jfndgj43/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
+        <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/RR2ndgj4l/imagesloaded.pkgd.min.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
         //http://www.shambix.com/en/isotope-twitter-bootstrap-infinite-scroll-fluid-responsive-layout/
@@ -109,8 +101,7 @@ http://rowrz.tumblr.com/themes
             // Fire Isotope only when images are loaded
             $container.imagesLoaded(function(){
                 $container.isotope({
-                    itemSelector : '#entry',
-                    columnWidth: 70%,
+                    itemSelector : '#entry, #fixed',
                     masonry: {
                     }
                 });
@@ -142,7 +133,7 @@ http://rowrz.tumblr.com/themes
         });
         </script>
     {/block:ifInfiniteScroll}
-{/block:Indexpage} 
+{/block:Indexpage}
 <style type="text/css">
 
 @font-face

@@ -77,10 +77,15 @@ http://rowrz.tumblr.com/themes
 <script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/a8Onbmv7g/infinitescroll.js"></script>
 <script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/wRSndgxfb/pageload.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/Bmdndh7b7/pageload.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $.loadInfiniteScroll({colourQuotes: false, columnCount: {select:Layout}, columnWidth: {select:ColumnWidth}});
+    // colourQuotes is for the colourful blockquotes like xkit
+    // columnCount is the amount of columns you want
+    // columnWidth is the width of the columns
+    // columnFullSize is the width of the parent div when you're using a percentage in the columnWidth
+    $.loadInfiniteScroll({colourQuotes: false, columnCount: {select:Layout}, columnWidth: {select:ColumnWidth}, columnFullSize: 800});
+
 });
 </script>
 

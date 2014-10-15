@@ -50,9 +50,12 @@ http://rowrz.tumblr.com/themes
 <meta name="if:AskLink" content="1"/>
 <meta name="if:InfiniteScroll" content="0"/>
 <meta name="if:DescPagination" content="1"/>
-<meta name="select:Layout" content="one" title="Single Column">
-<meta name="select:Layout" content="two" title="2 Columns">
-<meta name="select:Layout" content="three" title="Unlimited Columns">
+<meta name="select:Layout" content="1" title="One Column">
+<meta name="select:Layout" content="2" title="Two Columns">
+<meta name="select:Layout" content="3" title="Three Columns">
+<meta name="select:ColumnWidth" content="200" title="200px">
+<meta name="select:ColumnWidth" content="400" title="400px">
+<meta name="select:ColumnWidth" content="600" title="600px">
 <meta name="if:DescriptionUnderline" content="1"/>
 <meta name="text:FontSize" content="10px"/>
 <meta name="text:SideFontSize" content="9px"/>
@@ -74,23 +77,11 @@ http://rowrz.tumblr.com/themes
 <script type="text/javascript" src="http://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/a8Onbmv7g/infinitescroll.js"></script>
 <script type="text/javascript" src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/zQmnbmxr9/pageload.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/ib6vvvn/wRSndgxfb/pageload.js"></script>
 <script type="text/javascript">
-var columnsObj = {
-    one: function() {
-        $("#posts").css("width", "400px");
-    },
-    two: function() {
-        $("#posts").css("width", "620px");
-    },
-    three: function() {
-        $("#posts").css("max-width", "80%");
-    }
-};
 $(document).ready(function() {
-    columnsObj.{select:Layout}();
-    $.loadInfiniteScroll({colourQuotes: false});
-    });
+    $.loadInfiniteScroll({colourQuotes: false, columnCount: {select:Layout}, columnWidth: {select:ColumnWidth}});
+});
 </script>
 
 <style type="text/css">

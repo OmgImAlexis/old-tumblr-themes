@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
                       
 please do not steal nor copy without written consent                
-defensive theme v1.8.8                               
+defensive theme v1.8.9                               
 designed & manufacured by alex
 http://rowrz.tumblr.com/themes
 -->
@@ -50,8 +50,9 @@ http://rowrz.tumblr.com/themes
 <meta name="if:AskLink" content="1"/>
 <meta name="if:InfiniteScroll" content="0"/>
 <meta name="if:DescPagination" content="1"/>
-<meta name="if:MultiColumns" content="0"/>
-<meta name="if:2ColumnsOnly" content="1"/>
+<meta name="select:Layout" content="one" title="Single Column">
+<meta name="select:Layout" content="two" title="2 Columns">
+<meta name="select:Layout" content="three" title="Unlimited Columns">
 <meta name="if:DescriptionUnderline" content="1"/>
 <meta name="text:FontSize" content="10px"/>
 <meta name="text:SideFontSize" content="9px"/>
@@ -69,9 +70,8 @@ http://rowrz.tumblr.com/themes
 
 <meta name="text:Google analytics ID" content="">
 {/block:hidden}
-<script src="https://secure.static.tumblr.com/4ra4qv5/IVEncfr25/jquery.1.11.0.min.defensive.js"></script>
-{block:Indexpage}
-    {block:ifMultiColumns}
+<script src="https://secure.static.tumblr.com/4ra4qv5/Tnhndgqkt/jquery.1.11.0.min.defensive.js"></script>
+   {block:Indexpage}
         <script type="text/javascript" src="http://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
         <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
         <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/Qlbndcfnn/imagesloaded.pkgd.min.js"></script>
@@ -94,7 +94,7 @@ http://rowrz.tumblr.com/themes
             );
         });
         </script>
-    {/block:ifMultiColumns}
+    
     {block:ifInfiniteScroll}
     <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/Vhondcfma/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/sujndcfn1/isotope.pkgd.min.js"></script>
@@ -142,7 +142,7 @@ http://rowrz.tumblr.com/themes
         });
         </script>
     {/block:ifInfiniteScroll}
-{/block:Indexpage}
+{/block:Indexpage} 
 <style type="text/css">
 
 @font-face
@@ -201,13 +201,18 @@ width:410px;
 height:207px;
 {/block:PermalinkPage}}
 
-{block:indexpage}
+/*{block:indexpage}
     {block:ifMultiColumns}
     #posts{{block:ifnot2ColumnsOnly}max-width:80%{/block:ifnot2ColumnsOnly}
     {block:if2ColumnsOnly}width:620px;{/block:if2ColumnsOnly}
     }
     {block:ifMultiColumns}
-{/block:indexpage}
+    {block:ifnotMultiColumns}
+        #posts{
+            width:400;
+        }
+    {/block:ifnotMultiColumns}
+{/block:indexpage}*/
 .left{margin-left:400px;}
 #posts{
 {block:permalinkpage}
@@ -792,6 +797,10 @@ pre{
               ga('send', 'pageview');
             </script>
 {/block:IfGoogleAnalyticsID}
-    
+<script>
+    $(document).ready(function () {
+        columnsObj.{select:Layout}();
+    });
+</script>
 </body>
 </html>
